@@ -61,7 +61,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				school: {
+					primary: '#0074cc', // Blue color for primary elements
+					secondary: '#e63946', // Red color for accent elements
+					light: '#f8f9fa',
+					dark: '#343a40',
+					accent: '#48cae4', // Light blue for accents
+					success: '#06d6a0',
+					garden: '#6a994e' // Green color representing the garden/nature theme
 				}
+			},
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
+				serif: ['"Playfair Display"', 'serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
