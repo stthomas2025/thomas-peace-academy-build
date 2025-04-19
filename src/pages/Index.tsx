@@ -1,4 +1,5 @@
-import React, { Suspense } from "react";
+
+import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -9,8 +10,17 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { Loader } from "lucide-react";
 
-// Lazy load the 3D component for better performance
-const SchoolModel3D = React.lazy(() => import("@/components/SchoolModel3D"));
+// Remove the problematic 3D model component and replace with a placeholder
+const SchoolModelPlaceholder = () => (
+  <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden">
+    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}></div>
+    <div className="absolute inset-0 bg-school-primary/30 flex flex-col items-center justify-center text-white p-6 text-center">
+      <h3 className="text-2xl font-bold mb-2">3D Campus Tour</h3>
+      <p>Our interactive 3D campus model is currently being updated.</p>
+      <p className="mt-2">Please check back later for the virtual tour experience.</p>
+    </div>
+  </div>
+);
 
 const Index = () => {
   return (
@@ -19,7 +29,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       
-      {/* 3D Model Section */}
+      {/* 3D Model Section with placeholder instead of problematic component */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -33,16 +43,7 @@ const Index = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <Suspense fallback={
-              <div className="h-[400px] flex items-center justify-center bg-gray-100 rounded-xl">
-                <div className="flex flex-col items-center">
-                  <Loader className="h-10 w-10 text-school-primary animate-spin mb-4" />
-                  <p className="text-gray-600">Loading 3D Campus Model...</p>
-                </div>
-              </div>
-            }>
-              <SchoolModel3D />
-            </Suspense>
+            <SchoolModelPlaceholder />
           </div>
         </div>
       </section>

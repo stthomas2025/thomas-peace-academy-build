@@ -31,6 +31,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
+              className="relative" // Added position relative for framer-motion
             >
               <span className="inline-block h-1.5 w-12 bg-school-primary mb-4"></span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark mb-6">Our History</h2>
@@ -52,7 +53,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="rounded-xl overflow-hidden"
+              className="rounded-xl overflow-hidden relative" // Added position relative for framer-motion
             >
               <img 
                 src="/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png" 
@@ -83,7 +84,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative" // Added position relative for framer-motion
             >
               <div className="w-16 h-16 rounded-full bg-school-primary/10 flex items-center justify-center mb-6">
                 <BookOpen className="h-8 w-8 text-school-primary" />
@@ -114,7 +115,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 relative" // Added position relative for framer-motion
             >
               <div className="w-16 h-16 rounded-full bg-school-secondary/10 flex items-center justify-center mb-6">
                 <Target className="h-8 w-8 text-school-secondary" />
@@ -162,7 +163,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center"
+                  className="bg-white p-6 rounded-lg border border-gray-100 hover:shadow-md transition-shadow duration-300 text-center relative" // Added position relative for framer-motion
                 >
                   <div className="mx-auto w-12 h-12 rounded-full bg-school-primary/10 flex items-center justify-center mb-4">
                     <value.icon className="h-6 w-6 text-school-primary" />
