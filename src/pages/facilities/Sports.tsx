@@ -4,7 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Trophy, Running, Users, Calendar } from "lucide-react";
+import { Trophy, Activity, Users, Calendar } from "lucide-react";
+
 
 const Sports = () => {
   const facilities = [
@@ -14,7 +15,7 @@ const Sports = () => {
       description: "Multi-purpose indoor sports facility for basketball, badminton, table tennis, and other indoor games."
     },
     {
-      icon: Running,
+      icon: Activity,
       title: "Athletic Field",
       description: "Standard 400m track for athletics with facilities for jumps, throws, and sprints."
     },
