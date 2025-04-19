@@ -58,6 +58,7 @@ const Header = () => {
         { name: "Sports", link: "/facilities/sports" },
       ] 
     },
+    { name: "Blog", link: "/blog" },
     { name: "Admissions", link: "/admissions" },
     { name: "Gallery", link: "/gallery" },
     { name: "Contact", link: "/contact" },

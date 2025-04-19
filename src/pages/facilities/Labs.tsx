@@ -4,28 +4,89 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Flask, Monitor, Microscope, Dna } from "lucide-react";
 
 const Labs = () => {
+  const facilities = [
+    {
+      icon: Flask,
+      title: "Chemistry Lab",
+      description: "State-of-the-art chemistry laboratory equipped with modern apparatus and safety equipment."
+    },
+    {
+      icon: Microscope,
+      title: "Biology Lab",
+      description: "Advanced biology lab with microscopes and specimens for practical learning."
+    },
+    {
+      icon: Monitor,
+      title: "Computer Lab",
+      description: "Modern computer lab with latest hardware and software for digital literacy."
+    },
+    {
+      icon: Dna,
+      title: "Physics Lab",
+      description: "Well-equipped physics laboratory for conducting experiments and research."
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
       
       <section className="pt-32 pb-20 bg-gradient-to-b from-green-50 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4 text-center">
             Our Laboratories
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            State-of-the-art science, computer, and language laboratories for hands-on learning.
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto text-center">
+            State-of-the-art laboratories for hands-on learning and practical education.
           </p>
           
-          {/* Placeholder for detailed content */}
-          <div className="mt-8 p-8 bg-green-50 rounded-lg max-w-3xl mx-auto">
-            <p className="text-lg text-gray-600">
-              This page is under development. Check back soon for detailed information about our various laboratories, 
-              their equipment, and the practical learning experiences they provide.
-            </p>
-            <Button className="mt-4 bg-school-primary hover:bg-school-primary/90" asChild>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            {facilities.map((facility, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <facility.icon className="h-12 w-12 text-school-primary mb-4" />
+                <h3 className="text-xl font-bold text-school-dark mb-2">{facility.title}</h3>
+                <p className="text-gray-600">{facility.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-green-50 rounded-xl p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-school-dark mb-4">Laboratory Features</h2>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-school-primary/20 flex items-center justify-center text-school-primary mr-3 mt-1">✓</div>
+                    <span>Modern equipment and instruments</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-school-primary/20 flex items-center justify-center text-school-primary mr-3 mt-1">✓</div>
+                    <span>Qualified lab assistants</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-school-primary/20 flex items-center justify-center text-school-primary mr-3 mt-1">✓</div>
+                    <span>Safety equipment and protocols</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-school-primary/20 flex items-center justify-center text-school-primary mr-3 mt-1">✓</div>
+                    <span>Regular practical sessions</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative h-[300px] rounded-xl overflow-hidden">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
               <Link to="/facilities">Back to Facilities</Link>
             </Button>
           </div>
