@@ -42,6 +42,7 @@ const Header = () => {
       name: "Academics", 
       link: "/academics",
       submenu: [
+        { name: "Pre-School (Nursery-UKG)", link: "/academics/pre-school" },
         { name: "Primary School (I-V)", link: "/academics/primary" },
         { name: "Middle School (VI-VIII)", link: "/academics/middle" },
         { name: "High School (IX-X)", link: "/academics/high" },
@@ -52,7 +53,6 @@ const Header = () => {
       name: "Facilities", 
       link: "/facilities",
       submenu: [
-        { name: "Transportation", link: "/facilities/transportation" },
         { name: "Library", link: "/facilities/library" },
         { name: "Laboratories", link: "/facilities/labs" },
         { name: "Sports", link: "/facilities/sports" },
@@ -81,14 +81,6 @@ const Header = () => {
               <MapPin className="w-4 h-4" />
               <span>Dhamboji-1. Khajura Road, Nepalganj, Nepal</span>
             </div>
-          </div>
-          <div className="flex space-x-4">
-            <Button variant="ghost" className="h-7 text-white hover:text-school-light hover:bg-school-primary/80 px-2">
-              Alumni
-            </Button>
-            <Button variant="ghost" className="h-7 text-white hover:text-school-light hover:bg-school-primary/80 px-2">
-              E-Learning
-            </Button>
           </div>
         </div>
       </div>
@@ -145,7 +137,9 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <Button className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white">Apply Now</Button>
+            <Button className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
+              <Link to="/admissions">Apply Now</Link>
+            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -198,8 +192,8 @@ const Header = () => {
               </li>
             ))}
             <li>
-              <Button className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white">
-                Apply Now
+              <Button className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
+                <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
               </Button>
             </li>
           </ul>

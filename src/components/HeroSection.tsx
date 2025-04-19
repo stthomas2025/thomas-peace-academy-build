@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,7 +13,7 @@ const HeroSection = () => {
       id: 1,
       title: "Welcome to St. Thomas Secondary School",
       subtitle: "Providing Quality Education Since Establishment",
-      description: "A premier educational institution offering classes from I to XII in a peaceful and nurturing environment.",
+      description: "A premier educational institution offering classes from Nursery to XII in a peaceful and nurturing environment.",
       cta: "Apply Now",
       ctaLink: "/admissions"
     },
@@ -115,16 +116,22 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-school-secondary hover:bg-school-secondary/90 text-white font-medium px-8 py-3 rounded-md flex items-center"
+                asChild
               >
-                {slides[currentSlide].cta}
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to={slides[currentSlide].ctaLink}>
+                  {slides[currentSlide].cta}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="bg-transparent hover:bg-white/10 text-white border-white font-medium px-8 py-3 rounded-md"
+                asChild
               >
-                Learn More
+                <Link to="/about">
+                  Learn More
+                </Link>
               </Button>
             </motion.div>
           </motion.div>

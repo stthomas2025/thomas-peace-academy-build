@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -51,15 +52,21 @@ const CTASection = () => {
             <Button 
               size="lg" 
               className="bg-white text-school-primary hover:bg-white/90 font-medium px-8 py-3 rounded-md flex items-center"
+              asChild
             >
-              Apply for Admission <ArrowRight className="ml-2 h-4 w-4" />
+              <Link to="/admissions">
+                Apply for Admission <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
               className="bg-transparent border-white text-white hover:bg-white/10 font-medium px-8 py-3 rounded-md"
+              asChild
             >
-              Schedule a Visit
+              <Link to="/contact">
+                Schedule a Visit
+              </Link>
             </Button>
           </motion.div>
           
