@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, Flask, Football } from "lucide-react";
+import { Beaker, Award } from "lucide-react";  // Replaced Flask and Football
 
 const Facilities = () => {
   const facilities = [
@@ -18,7 +18,7 @@ const Facilities = () => {
     },
     {
       title: "Laboratories",
-      icon: Flask,
+      icon: Beaker,  // Changed from Flask
       description: "State-of-the-art science, computer, and language laboratories for practical learning.",
       link: "/facilities/labs",
       color: "bg-green-50",
@@ -26,7 +26,7 @@ const Facilities = () => {
     },
     {
       title: "Sports Facilities",
-      icon: Football,
+      icon: Award,  // Changed from Football
       description: "Indoor and outdoor sports facilities including courts, fields, and equipment.",
       link: "/facilities/sports",
       color: "bg-orange-50",
@@ -80,3 +80,4 @@ const Facilities = () => {
 };
 
 export default Facilities;
+
