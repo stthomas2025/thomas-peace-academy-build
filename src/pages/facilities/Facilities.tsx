@@ -1,10 +1,9 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Beaker, Award } from "lucide-react";  // Replaced Flask and Football
+import { BookOpen, Beaker, Award } from "lucide-react";
 
 const Facilities = () => {
   const facilities = [
@@ -18,7 +17,7 @@ const Facilities = () => {
     },
     {
       title: "Laboratories",
-      icon: Beaker,  // Changed from Flask
+      icon: Beaker,
       description: "State-of-the-art science, computer, and language laboratories for practical learning.",
       link: "/facilities/labs",
       color: "bg-green-50",
@@ -26,7 +25,7 @@ const Facilities = () => {
     },
     {
       title: "Sports Facilities",
-      icon: Award,  // Changed from Football
+      icon: Award,
       description: "Indoor and outdoor sports facilities including courts, fields, and equipment.",
       link: "/facilities/sports",
       color: "bg-orange-50",
@@ -39,17 +38,17 @@ const Facilities = () => {
       <Header />
       
       <section className="pt-32 pb-20 bg-gradient-to-b from-school-primary/10 to-white">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4 text-center">
             Our Facilities
           </h1>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto text-center">
             St. Thomas Secondary School provides modern facilities to enhance the learning experience and support the holistic development of our students.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {facilities.map((facility, index) => (
-              <div key={index} className={`p-8 rounded-xl shadow-md ${facility.color}`}>
+              <div key={index} className={`p-8 rounded-xl shadow-md ${facility.color} transform hover:scale-105 transition-all duration-300`}>
                 <facility.icon className="h-12 w-12 mx-auto mb-4 text-school-primary" />
                 <h2 className="text-2xl font-bold text-school-dark mb-2">{facility.title}</h2>
                 <p className="text-gray-600 mb-6">{facility.description}</p>
@@ -58,18 +57,6 @@ const Facilities = () => {
                 </Button>
               </div>
             ))}
-          </div>
-          
-          {/* Placeholder for additional facilities */}
-          <div className="mt-16 p-8 bg-gray-50 rounded-lg max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-school-dark mb-4">Additional Facilities</h2>
-            <p className="text-gray-600 mb-6">
-              We also offer various other facilities including an auditorium, art studio, music room, cafeteria, 
-              and secure transportation services. Detailed information about these facilities will be added soon.
-            </p>
-            <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
-              <Link to="/contact">Contact for More Information</Link>
-            </Button>
           </div>
         </div>
       </section>
@@ -80,4 +67,3 @@ const Facilities = () => {
 };
 
 export default Facilities;
-
