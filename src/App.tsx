@@ -12,23 +12,30 @@ import NotFound from "./pages/NotFound";
 // Academic pages
 import PreSchool from "./pages/academics/PreSchool";
 import PrimarySchool from "./pages/academics/PrimarySchool";
-
-// Import placeholder pages we'll create for now
-import Academics from "./pages/academics/Academics";
 import MiddleSchool from "./pages/academics/MiddleSchool";
 import HighSchool from "./pages/academics/HighSchool";
 import PlusTwo from "./pages/academics/PlusTwo";
+import Academics from "./pages/academics/Academics";
+
+// Course pages
+import Science from "./pages/academics/courses/Science";
+import ManagementCS from "./pages/academics/courses/ManagementCS";
+import HotelManagement from "./pages/academics/courses/HotelManagement";
+
+// Facility pages
 import Library from "./pages/facilities/Library";
 import Labs from "./pages/facilities/Labs";
 import Sports from "./pages/facilities/Sports";
 import Facilities from "./pages/facilities/Facilities";
-import Admissions from "./pages/Admissions";
-import Gallery from "./pages/Gallery";
+
+// About pages
 import SchoolHistory from "./pages/about/History";
 import Mission from "./pages/about/Mission";
 import PrincipalMessage from "./pages/about/PrincipalMessage";
 
-// Add new imports
+// Other pages
+import Admissions from "./pages/Admissions";
+import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
@@ -57,6 +64,11 @@ const App = () => (
           <Route path="/academics/high" element={<HighSchool />} />
           <Route path="/academics/plus-two" element={<PlusTwo />} />
           
+          {/* Course Routes */}
+          <Route path="/academics/courses/science" element={<Science />} />
+          <Route path="/academics/courses/management-cs" element={<ManagementCS />} />
+          <Route path="/academics/courses/hotel-management" element={<HotelManagement />} />
+          
           {/* Facilities Routes */}
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/facilities/library" element={<Library />} />
@@ -68,7 +80,7 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           
-          {/* Add new routes */}
+          {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           

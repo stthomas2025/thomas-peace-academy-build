@@ -4,12 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Flask, Monitor, Microscope, Dna } from "lucide-react";
+import { Beaker, Monitor, Microscope, Dna } from "lucide-react";
 
 const Labs = () => {
   const facilities = [
     {
-      icon: Flask,
+      icon: Beaker,
       title: "Chemistry Lab",
       description: "State-of-the-art chemistry laboratory equipped with modern apparatus and safety equipment."
     },
