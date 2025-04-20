@@ -11,7 +11,8 @@ const Gallery = () => {
       {
         src: "/lovable-uploads/6d96e37e-503b-46a2-805d-bb1eadc02ace.png",
         alt: "St. Thomas School Building",
-        caption: "Our Modern School Building"
+        caption: "Our Modern School Building", 
+
       }
     ],
     "Academic Excellence": [
@@ -57,9 +58,9 @@ const Gallery = () => {
     ],
     "School Life": [
       {
-        src: "/lovable-uploads/57ca7c8f-6288-424d-bb5f-60a81b95a553.png",
+        src: "lovable-uploads /1st batch photo.jpg",
         alt: "Welcome to School",
-        caption: "Welcome to St. Thomas"
+        caption: "10+2 Science First Batch "
       },
       {
         src: "/lovable-uploads/5836a4d5-ec87-4e7c-b5fc-8dd1cc76d242.png",
