@@ -15,19 +15,19 @@ const CampusEnvironmentSection = () => {
 
   const features = [
     {
-      title: "Beautiful Gardens",
-      description: "Our campus features meticulously maintained gardens with diverse flowers and plants, creating a serene atmosphere.",
-      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
+      title: "Beautiful Campus",
+      description: "Our campus features a modern infrastructure with specialized labs and lush green surroundings.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
     },
     {
       title: "Clean Air & Greenery",
-      description: "The abundance of trees and plants ensures fresh air and a pleasant environment that enhances focus and reduces stress.",
-      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
+      description: "The abundance of trees and well-maintained gardens ensure a fresh and pleasant environment.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
     },
     {
-      title: "Peaceful Location",
-      description: "Located away from the bustle of the city center, our campus offers a tranquil setting perfect for academics.",
-      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
+      title: "State-of-the-Art Facilities",
+      description: "Modern classrooms, computer labs, science labs, and specialized learning spaces.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
     }
   ];
 
@@ -61,7 +61,7 @@ const CampusEnvironmentSection = () => {
           >
             <div 
               className="w-full h-full bg-cover bg-fixed bg-center"
-              style={{ backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')" }}
+              style={{ backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" }}
             ></div>
             <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>

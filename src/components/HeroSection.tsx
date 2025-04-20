@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -64,7 +65,7 @@ const HeroSection = () => {
           <div 
             className="absolute inset-0 bg-cover bg-center transform transition-transform duration-1000"
             style={{ 
-              backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')" 
+              backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" 
             }}
           ></div>
           <div className="absolute inset-0 bg-black/40"></div>

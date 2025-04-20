@@ -14,7 +14,7 @@ const SchoolModelPlaceholder = () => (
     <div 
       className="absolute inset-0 bg-cover bg-center" 
       style={{ 
-        backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')" 
+        backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" 
       }}
     ></div>
     <div className="absolute inset-0 bg-school-primary/30 flex flex-col items-center justify-center text-white p-6 text-center">
