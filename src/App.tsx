@@ -9,6 +9,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+
+
 // Academic pages
 import PreSchool from "./pages/academics/PreSchool";
 import PrimarySchool from "./pages/academics/PrimarySchool";
@@ -52,7 +54,13 @@ const App = () => (
           <Route path="/" element={<Index />} />
           
           {/* About Route */}
-          <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
+
+        {/* About Subpages */}
+        <Route path="/about/history" element={<SchoolHistory />} />
+        <Route path="/about/mission" element={<Mission />} />
+        <Route path="/about/principal-message" element={<PrincipalMessage />} />
+        
           
           {/* Academic Routes */}
           <Route path="/academics" element={<Academics />} />

@@ -26,14 +26,15 @@ const PrincipalMessage = () => {
                 <div className="relative h-[400px]">
                   <div 
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80')" }}
+                    style={{ backgroundImage: `url("/lovable-uploads/dhalendra sir.jpg")`}}
+
                   ></div>
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-school-dark mb-1">Dr. Thomas Johnson</h3>
+                  <h3 className="text-2xl font-bold text-school-dark mb-1">Mr. Dhalendra Chaudhary</h3>
                   <p className="text-school-primary font-medium mb-4">Principal</p>
                   <p className="text-gray-600">
-                    Ph.D. in Education<br />
+                    <br />
                     20+ years in Educational Leadership<br />
                     National Award for Excellence in Teaching
                   </p>

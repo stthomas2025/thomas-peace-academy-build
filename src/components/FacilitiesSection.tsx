@@ -3,6 +3,8 @@ import React from "react";
 import { Bus, BookOpen, Beaker, Trophy, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 const FacilitiesSection = () => {
   const facilities = [
@@ -96,9 +98,11 @@ const FacilitiesSection = () => {
               </div>
               <h3 className="text-xl font-bold text-school-dark mb-3">{facility.title}</h3>
               <p className="text-gray-600">{facility.description}</p>
-              <a href="#" className="inline-flex items-center mt-4 text-school-primary font-medium hover:underline">
-                Learn more <ArrowRight className="ml-1 h-4 w-4" />
-              </a>
+               <Button className="bg-school-primary hover:bg-school-primary/90 text-white" asChild>
+                              <Link to="/facilities">
+                                Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                              </Link>
+                            </Button>
             </motion.div>
           ))}
         </motion.div>
@@ -158,9 +162,7 @@ const FacilitiesSection = () => {
               </li>
             </ul>
             
-            <Button className="bg-school-primary hover:bg-school-primary/90 text-white">
-              View Transportation Routes
-            </Button>
+      
           </motion.div>
         </div>
       </div>

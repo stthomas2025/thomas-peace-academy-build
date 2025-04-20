@@ -217,7 +217,7 @@ const About = () => {
               <div className="relative">
                 <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
                   <img 
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1780&q=80" 
+                    src="lovable-uploads/arjun sir.jpg"
                     alt="Founder" 
                     className="w-full h-full object-cover object-center"
                   />
@@ -230,7 +230,7 @@ const About = () => {
               <h3 className="text-2xl font-serif font-bold text-school-dark mb-2">
                 Founder's Message
               </h3>
-              <h4 className="text-xl text-school-primary font-medium mb-6">Mr. Ramesh Shrestha, Founder & Chairman</h4>
+              <h4 className="text-xl text-school-primary font-medium mb-6">Mr. Arjun Shrestha, Founder & Chairman</h4>
               <div className="text-gray-600 space-y-4">
                 <p>
                   "When I established St. Thomas Secondary School in 1990, my vision was to create an educational institution 
@@ -264,7 +264,7 @@ const About = () => {
               <h3 className="text-2xl font-serif font-bold text-school-dark mb-2">
                 Principal's Message
               </h3>
-              <h4 className="text-xl text-school-primary font-medium mb-6">Dr. Rajesh Sharma, Principal</h4>
+              <h4 className="text-xl text-school-primary font-medium mb-6">Mr.Dhalendra Chuadhary, Principal</h4>
               <div className="text-gray-600 space-y-4">
                 <p>
                   "At St. Thomas Secondary School, we believe that education is not just about academic achievements but about 
@@ -293,7 +293,7 @@ const About = () => {
               <div className="relative">
                 <div className="relative h-[400px] rounded-xl overflow-hidden shadow-lg">
                   <img 
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                  src="lovable-uploads/dhalendra sir.jpg"
                     alt="Principal" 
                     className="w-full h-full object-cover object-center"
                   />
