@@ -51,11 +51,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           
-          {/* About Routes */}
+          {/* About Route */}
           <Route path="/about" element={<About />} />
-          <Route path="/about/history" element={<SchoolHistory />} />
-          <Route path="/about/mission" element={<Mission />} />
-          <Route path="/about/message" element={<PrincipalMessage />} />
           
           {/* Academic Routes */}
           <Route path="/academics" element={<Academics />} />

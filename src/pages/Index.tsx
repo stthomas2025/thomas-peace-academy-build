@@ -1,16 +1,14 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
-import FacultySection from "@/components/FacultySection";
+import BoardMembersSection from "@/components/BoardMembersSection";
 import CampusEnvironmentSection from "@/components/CampusEnvironmentSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { Loader } from "lucide-react";
 
-// Remove the problematic 3D model component and replace with a placeholder
 const SchoolModelPlaceholder = () => (
   <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden">
     <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}></div>
@@ -29,7 +27,6 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       
-      {/* 3D Model Section with placeholder instead of problematic component */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -49,7 +46,7 @@ const Index = () => {
       </section>
       
       <FacilitiesSection />
-      <FacultySection />
+      <BoardMembersSection />
       <CampusEnvironmentSection />
       <CTASection />
       <Footer />

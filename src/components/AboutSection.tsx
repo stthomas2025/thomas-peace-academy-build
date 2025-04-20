@@ -1,8 +1,8 @@
-
 import React from "react";
 import { ArrowRight, GraduationCap, Users, School, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   const stats = [
@@ -63,13 +63,15 @@ const AboutSection = () => {
             </motion.div>
             
             <motion.div variants={itemVariants}>
-              <Button className="bg-school-primary hover:bg-school-primary/90 text-white">
-                Discover More <ArrowRight className="ml-2 h-4 w-4" />
+              <Button className="bg-school-primary hover:bg-school-primary/90 text-white" asChild>
+                <Link to="/about">
+                  Discover More <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Image Side with 3D Effect */}
+          {/* Image Side */}
           <div className="relative h-full flex items-center justify-center overflow-hidden">
             <div className="relative h-[500px] w-full max-w-[500px] rounded-2xl overflow-hidden transform perspective-1000">
               <motion.div
@@ -92,7 +94,6 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl"></div>
               </motion.div>
               
-              {/* 3D Floating Caption */}
               <motion.div 
                 className="absolute bottom-0 left-0 w-full p-6 z-10"
                 initial={{ y: 20, opacity: 0 }}
