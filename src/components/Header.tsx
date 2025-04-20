@@ -35,7 +35,7 @@ const Header = () => {
       submenu: [
         { name: "School History", link: "/about/history" },
         { name: "Mission & Vision", link: "/about/mission" },
-        { name: "Principal's Message", link: "/about/message" },
+        { name: "Principal's Message", link: "/about/principal-message" },
       ] 
     },
     { 
