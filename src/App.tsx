@@ -27,6 +27,7 @@ import Library from "./pages/facilities/Library";
 import Labs from "./pages/facilities/Labs";
 import Sports from "./pages/facilities/Sports";
 import Facilities from "./pages/facilities/Facilities";
+import Transportation from "./pages/facilities/Transportation";
 
 // About pages
 import SchoolHistory from "./pages/about/History";
@@ -74,6 +75,7 @@ const App = () => (
           <Route path="/facilities/library" element={<Library />} />
           <Route path="/facilities/labs" element={<Labs />} />
           <Route path="/facilities/sports" element={<Sports />} />
+          <Route path="/facilities/transportation" element={<Transportation />} />
           
           {/* Other Routes */}
           <Route path="/admissions" element={<Admissions />} />
