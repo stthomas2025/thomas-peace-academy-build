@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -7,11 +8,15 @@ import BoardMembersSection from "@/components/BoardMembersSection";
 import CampusEnvironmentSection from "@/components/CampusEnvironmentSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import { Loader } from "lucide-react";
 
 const SchoolModelPlaceholder = () => (
   <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden">
-    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}></div>
+    <div 
+      className="absolute inset-0 bg-cover bg-center" 
+      style={{ 
+        backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')" 
+      }}
+    ></div>
     <div className="absolute inset-0 bg-school-primary/30 flex flex-col items-center justify-center text-white p-6 text-center">
       <h3 className="text-2xl font-bold mb-2">3D Campus Tour</h3>
       <p>Our interactive 3D campus model is currently being updated.</p>

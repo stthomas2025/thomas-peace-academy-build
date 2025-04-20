@@ -1,4 +1,3 @@
-
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -18,17 +17,17 @@ const CampusEnvironmentSection = () => {
     {
       title: "Beautiful Gardens",
       description: "Our campus features meticulously maintained gardens with diverse flowers and plants, creating a serene atmosphere.",
-      image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png"
+      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
     },
     {
       title: "Clean Air & Greenery",
       description: "The abundance of trees and plants ensures fresh air and a pleasant environment that enhances focus and reduces stress.",
-      image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png"
+      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
     },
     {
       title: "Peaceful Location",
       description: "Located away from the bustle of the city center, our campus offers a tranquil setting perfect for academics.",
-      image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png"
+      image: "/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg"
     }
   ];
 
@@ -51,7 +50,6 @@ const CampusEnvironmentSection = () => {
           </p>
         </motion.div>
 
-        {/* 3D Parallax Hero */}
         <div className="relative h-[500px] mb-20 rounded-2xl overflow-hidden">
           <motion.div 
             style={{ y, opacity }} 
@@ -63,7 +61,7 @@ const CampusEnvironmentSection = () => {
           >
             <div 
               className="w-full h-full bg-cover bg-fixed bg-center"
-              style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}
+              style={{ backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')" }}
             ></div>
             <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>
@@ -87,7 +85,6 @@ const CampusEnvironmentSection = () => {
           </div>
         </div>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
             <motion.div 
@@ -113,7 +110,6 @@ const CampusEnvironmentSection = () => {
           ))}
         </div>
 
-        {/* Testimonial */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +134,6 @@ const CampusEnvironmentSection = () => {
           </div>
         </motion.div>
 
-        {/* Environment Stats */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}

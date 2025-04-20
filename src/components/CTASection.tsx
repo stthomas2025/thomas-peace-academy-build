@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -13,7 +12,7 @@ const CTASection = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ 
-            backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')",
+            backgroundImage: "url('/lovable-uploads/464940392_8495188250534965_2402399574715633409_n.jpg')",
             filter: "blur(5px)"
           }}
         ></div>
