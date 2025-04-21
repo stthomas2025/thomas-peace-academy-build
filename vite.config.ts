@@ -1,20 +1,18 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-
-
 export default defineConfig(({ mode }) => ({
- base: '/thomas-peace-academy-build/',
+  base: '/thomas-peace-academy-build/', // keep as your GitHub repo name
   server: {
     host: "::",
-    port: 5173,
+    port: 8080, // REQUIRED by Lovable for dev builds
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
+    mode === 'development' && componentTagger(),
   ].filter(Boolean),
   resolve: {
     alias: {
