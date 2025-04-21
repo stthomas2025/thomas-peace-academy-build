@@ -9,14 +9,11 @@ import Footer from "@/components/Footer";
 
 const SchoolModelPlaceholder = () => (
   <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
-    <video
+    <img
+      src="/lovable-uploads/new-building.jpg"
+      alt="ST School Building"
       className="w-full h-full object-cover"
-      src="/lovable-uploads/high school/st video.mp4"
-      controls
-      poster="/lovable-uploads/high school/founder (21).jpg"
-    >
-      Sorry, your browser does not support embedded videos.
-    </video>
+    />
     <div className="absolute inset-0 bg-school-primary/10 pointer-events-none text-white flex flex-col items-center justify-center text-center"></div>
   </div>
 );
