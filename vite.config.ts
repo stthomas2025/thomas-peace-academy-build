@@ -3,10 +3,10 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-const repoName = 'thomas-peace-academy-build'; // ✅ your GitHub repo name
+
 
 export default defineConfig(({ mode }) => ({
-  base: `/${repoName}/`, // ← this works perfectly
+ base: '/thomas-peace-academy-build/',
   server: {
     host: "::",
     port: 5173,
