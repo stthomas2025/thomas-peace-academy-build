@@ -1,73 +1,147 @@
-# Welcome to your Lovable project
+St. Thomas Secondary School Website
 
-## Project info
+Welcome to the official repository for the St. Thomas Secondary School Website, a modern, fully responsive, and beautifully designed static website developed using React, TypeScript, Vite, and Node.js for tooling. This project is focused on delivering a clean, user-friendly, and engaging experience for both students and parents seeking information about the school’s facilities, academics, and activities.
 
-**URL**: https://lovable.dev/projects/34ecd199-0518-4e83-a470-b445b8760369
+🚀 Project Overview
 
-## How can I edit this code?
+The St. Thomas Secondary School website is a static, frontend-only application designed to:
 
-There are several ways of editing your application.
+Present the school’s vision, mission, and educational values
 
-**Use Lovable**
+Showcase facilities such as classrooms, laboratories, and sports grounds
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/34ecd199-0518-4e83-a470-b445b8760369) and start prompting.
+Offer a visually appealing gallery to highlight events and day-to-day activities
 
-Changes made via Lovable will be committed automatically to this repo.
+Provide essential contact and location information
 
-**Use your preferred IDE**
+Deliver a mobile-first, fast-loading, SEO-optimized experience
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🛠️ Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Technology
 
-Follow these steps:
+Purpose
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+React
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Frontend UI development
 
-# Step 3: Install the necessary dependencies.
-npm i
+TypeScript
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Type-safe development for scalability and reliability
 
-**Edit a file directly in GitHub**
+Vite
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Fast build tool and development server
 
-**Use GitHub Codespaces**
+Node.js
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Tooling support and package management via npm
 
-## What technologies are used for this project?
+Tailwind CSS
 
-This project is built with:
+Utility-first CSS framework for fast and beautiful design
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Lucide Icons
 
-## How can I deploy this project?
+Modern icon set for UI embellishment
 
-Simply open [Lovable](https://lovable.dev/projects/34ecd199-0518-4e83-a470-b445b8760369) and click on Share -> Publish.
+React Router
 
-## Can I connect a custom domain to my Lovable project?
+Client-side routing and navigation
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+🌐 Pages & Features
+
+1. 🏠 Home Page
+
+Overview of the school
+
+Mission and vision
+
+CTA (Call to Action) to visit facilities or gallery
+
+2. 🏫 Facilities Page
+
+Academic blocks, labs, computer rooms, libraries
+
+Icons and cards layout for easy readability
+
+Responsive grid layout
+
+3. 🏅 Sports Page
+
+Dedicated section for indoor/outdoor sports
+
+Descriptions with modern illustrations and icons
+
+Annual Sports Meet details
+
+4. 🖼️ Gallery Page
+
+Interactive image showcase using Unsplash/own assets
+
+Responsive gallery layout
+
+Real-life photos of students and campus life
+
+5. 📞 Contact Page
+
+Google Maps embed for location
+
+School address, contact number, and email
+
+Simple contact form ()
+
+6. 🧭 Navigation
+
+Sticky navigation bar using a responsive <Header /> component
+
+Footer with quick links and social media integration
+
+🎨 Design Philosophy
+
+Clean & Minimal – White backgrounds, school colors, and modern fonts
+
+Mobile-First – Fully responsive across all devices
+
+Accessibility – Semantic tags and readable contrast
+
+Consistent Branding – Uses the school’s theme across all pages
+
+
+Open in your browser: =
+
+
+🛡️ Security & Privacy
+
+This is a static website with no backend or login features. All data is publicly available and safe for open hosting.
+
+📌 Future Enhancements
+
+Contact form with validation & backend support
+
+CMS integration for easy content updates
+
+Dark mode
+
+Multilingual support
+
+👥 Credits
+
+Developed by [N.L Bhattarai and teams]
+
+Inspired by the vision of St. Thomas Secondary School
+
+Icons from Lucide
+
+Images from Unsplash
+
+📜 License
+
+This project is open-source and available under the MIT License.
+
+For questions, contact [nlbt3000@gmail.com].
+
+Thanks for checking out the St. Thomas Secondary School project! 🎓📚
