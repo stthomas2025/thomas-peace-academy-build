@@ -4,41 +4,41 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Microscope } from "lucide-react";
+import { Monitor } from "lucide-react";
 
-const Science = () => (
+const ComputerScience = () => (
   <div className="min-h-screen">
     <Header />
-    <section className="pt-32 pb-20 bg-gradient-to-b from-blue-50 to-white">
+    <section className="pt-32 pb-20 bg-gradient-to-b from-purple-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex items-center text-sm text-gray-600 mb-8">
           <Link to="/academics" className="hover:text-school-primary">Academics</Link>
           <span className="mx-2">›</span>
           <Link to="/academics/plus-two" className="hover:text-school-primary">Plus Two</Link>
           <span className="mx-2">›</span>
-          <span className="text-school-primary">Science</span>
+          <span className="text-school-primary">Computer Science</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4">
-          Science
+          Computer Science
         </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-          Our Science stream provides rigorous foundations in Physics, Chemistry, Biology, Mathematics, and English for future doctors, engineers, and scientists.
+          Gain expertise in programming, algorithms, and IT skills for a future in software development, data science, or technology innovation.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 items-center">
           <div>
             <h2 className="text-2xl font-bold text-school-dark mb-4">Course Overview</h2>
             <ul className="list-disc pl-5 text-gray-700">
-              <li>Physics, Chemistry, Biology</li>
-              <li>Mathematics for Science</li>
-              <li>Research & Lab Skills</li>
-              <li>Preparation for Medical/Engineering Exams</li>
+              <li>Programming (Python, JavaScript, C)</li>
+              <li>Web Development & Databases</li>
+              <li>Data Structures & Algorithms</li>
+              <li>IT Fundamentals, Networking & Security</li>
             </ul>
             <Button className="mt-8 bg-school-primary hover:bg-school-primary/90" asChild>
               <Link to="/apply">Apply Now</Link>
             </Button>
           </div>
           <div className="relative h-[300px] rounded-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1460574283810-2aab119d8511?auto=format&fit=crop&w=600&q=80" alt="Science" className="object-cover w-full h-full" />
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="Computer Science" className="object-cover w-full h-full" />
           </div>
         </div>
       </div>
@@ -46,4 +46,4 @@ const Science = () => (
     <Footer />
   </div>
 );
-export default Science;
+export default ComputerScience;

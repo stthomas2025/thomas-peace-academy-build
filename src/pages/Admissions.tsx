@@ -1,10 +1,10 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Users, Book } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Admissions = () => {
   const admissionSteps = [
@@ -28,7 +28,6 @@ const Admissions = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      
       <section className="pt-32 pb-20 bg-gradient-to-b from-school-primary/10 to-white">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -43,12 +42,13 @@ const Admissions = () => {
             <p className="text-xl text-gray-600 mb-8">
               Join St. Thomas Secondary School and experience quality education in a nurturing environment.
             </p>
-            <Button className="bg-school-primary hover:bg-school-primary/90">
-              Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
+              <Link to="/apply">
+                Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </motion.div>
 
-          {/* Admission Process */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {admissionSteps.map((step, index) => (
               <motion.div
@@ -65,7 +65,6 @@ const Admissions = () => {
             ))}
           </div>
 
-          {/* Fee Structure */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-16">
             <h2 className="text-3xl font-bold text-school-dark mb-6 text-center">Fee Structure</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,7 +110,6 @@ const Admissions = () => {
             </div>
           </div>
 
-          {/* Required Documents */}
           <div className="bg-white rounded-xl shadow-lg p-8">
             <h2 className="text-3xl font-bold text-school-dark mb-6 text-center">Required Documents</h2>
             <div className="max-w-2xl mx-auto">
@@ -134,7 +132,6 @@ const Admissions = () => {
           </div>
         </div>
       </section>
-      
       <Footer />
     </div>
   );

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
@@ -33,7 +32,6 @@ const Header = () => {
       name: "About", 
       link: "/about",
       submenu: [
-        { name: "School History", link: "/about/history" },
         { name: "Mission & Vision", link: "/about/mission" },
         { name: "Principal's Message", link: "/about/principal-message" },
       ] 
@@ -67,7 +65,6 @@ const Header = () => {
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
-      {/* Top Header with Contact Info */}
       <div className="bg-school-primary text-white py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6 text-sm">
@@ -87,10 +84,8 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Header */}
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div className="w-16 h-16 mr-2 relative overflow-hidden">
@@ -109,7 +104,6 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex">
             <ul className="flex space-x-1">
               {menuItems.map((item, index) => (
@@ -121,7 +115,6 @@ const Header = () => {
                     {item.name}
                     {item.submenu && <ChevronDown className="ml-1 w-4 h-4" />}
                   </Link>
-                  
                   {item.submenu && (
                     <ul className="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
                       {item.submenu.map((subItem, subIndex) => (
@@ -140,11 +133,10 @@ const Header = () => {
               ))}
             </ul>
             <Button className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
-              <Link to="/admissions">Apply Now</Link>
+              <Link to="/apply">Apply Now</Link>
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
             className="lg:hidden p-2 focus:outline-none"
@@ -159,7 +151,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-md transition-transform duration-300 transform ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
@@ -195,12 +186,11 @@ const Header = () => {
             ))}
             <li>
               <Button className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
-                <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
+                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
               </Button>
             </li>
           </ul>
 
-          {/* Mobile Contact Info */}
           <div className="mt-6 space-y-2 text-sm">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4 text-school-primary" />

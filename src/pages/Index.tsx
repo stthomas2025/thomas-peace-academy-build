@@ -1,7 +1,5 @@
-
 import React from "react";
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import FacilitiesSection from "@/components/FacilitiesSection";
 import BoardMembersSection from "@/components/BoardMembersSection";
@@ -10,18 +8,16 @@ import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 const SchoolModelPlaceholder = () => (
-  <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden">
-    <div 
-      className="absolute inset-0 bg-cover bg-center" 
-      style={{ 
-        backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" 
-      }}
-    ></div>
-    <div className="absolute inset-0 bg-school-primary/30 flex flex-col items-center justify-center text-white p-6 text-center">
-      <h3 className="text-2xl font-bold mb-2">3D Campus Tour</h3>
-      <p>Our interactive 3D campus model is currently being updated.</p>
-      <p className="mt-2">Please check back later for the virtual tour experience.</p>
-    </div>
+  <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
+    <video
+      className="w-full h-full object-cover"
+      src="/lovable-uploads/high school/st video.mp4"
+      controls
+      poster="/lovable-uploads/high school/founder (21).jpg"
+    >
+      Sorry, your browser does not support embedded videos.
+    </video>
+    <div className="absolute inset-0 bg-school-primary/10 pointer-events-none text-white flex flex-col items-center justify-center text-center"></div>
   </div>
 );
 
@@ -29,7 +25,6 @@ const Index = () => {
   return (
     <div className="min-h-screen font-sans">
       <Header />
-      <HeroSection />
       <AboutSection />
       
       <section className="py-20 bg-white">
@@ -40,10 +35,9 @@ const Index = () => {
               Explore Our Campus
             </h2>
             <p className="text-gray-600 text-lg">
-              Take a virtual tour of St. Thomas Secondary School through our interactive 3D model.
+              Take a virtual tour of St. Thomas Secondary School through glimpses of our vibrant campus.
             </p>
           </div>
-          
           <div className="max-w-4xl mx-auto">
             <SchoolModelPlaceholder />
           </div>

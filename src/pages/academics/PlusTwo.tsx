@@ -5,53 +5,61 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Microscope, Monitor, UtensilsCrossed, ArrowRight } from "lucide-react";
+import { Microscope, Briefcase, Monitor, UtensilsCrossed, ArrowRight } from "lucide-react";
+
+const courses = [
+  {
+    title: "Science",
+    description: "Comprehensive science education preparing students for careers in medicine, engineering, research and more.",
+    icon: Microscope,
+    link: "/academics/courses/science",
+    color: "bg-blue-50",
+    iconColor: "text-blue-500",
+    buttonColor: "border-blue-500 text-blue-500 hover:bg-blue-50"
+  },
+  {
+    title: "Management",
+    description: "A blend of business management principles, accountancy, and economics for aspiring future leaders.",
+    icon: Briefcase,
+    link: "/academics/courses/management",
+    color: "bg-green-50",
+    iconColor: "text-green-600",
+    buttonColor: "border-green-600 text-green-600 hover:bg-green-50"
+  },
+  {
+    title: "Computer Science",
+    description: "In-depth study of programming, data structures, and IT systems for digital transformation careers.",
+    icon: Monitor,
+    link: "/academics/courses/computer-science",
+    color: "bg-purple-50",
+    iconColor: "text-purple-500",
+    buttonColor: "border-purple-500 text-purple-500 hover:bg-purple-50"
+  },
+  {
+    title: "Hotel Management",
+    description: "Specialized training in hospitality operations, services, and management for careers in the hotel industry.",
+    icon: UtensilsCrossed,
+    link: "/academics/courses/hotel-management",
+    color: "bg-amber-50",
+    iconColor: "text-amber-500",
+    buttonColor: "border-amber-500 text-amber-500 hover:bg-amber-50"
+  }
+];
+
+const features = [
+  "Experienced faculty with expertise in higher secondary education",
+  "Well-equipped laboratories and modern teaching aids",
+  "Regular career counseling and guidance sessions",
+  "Specialized coaching for entrance examinations",
+  "Industry exposure through field visits and guest lectures",
+  "Regular parent-teacher meetings to track progress",
+  "Focus on both academic excellence and personality development"
+];
 
 const PlusTwo = () => {
-  const courses = [
-    {
-      title: "Science",
-      description: "Comprehensive science education preparing students for careers in medicine, engineering, research, and more.",
-      icon: Microscope,
-      link: "/academics/courses/science",
-      color: "bg-blue-50",
-      iconColor: "text-blue-500",
-      buttonColor: "border-blue-500 text-blue-500 hover:bg-blue-50"
-    },
-    {
-      title: "Management with Computer Science",
-      description: "Blend of business management principles with computer science skills for the digital business world.",
-      icon: Monitor,
-      link: "/academics/courses/management-cs",
-      color: "bg-purple-50",
-      iconColor: "text-purple-500",
-      buttonColor: "border-purple-500 text-purple-500 hover:bg-purple-50"
-    },
-    {
-      title: "Hotel Management",
-      description: "Specialized training in hospitality operations, services, and management for careers in the hotel industry.",
-      icon: UtensilsCrossed,
-      link: "/academics/courses/hotel-management",
-      color: "bg-amber-50",
-      iconColor: "text-amber-500",
-      buttonColor: "border-amber-500 text-amber-500 hover:bg-amber-50"
-    }
-  ];
-
-  const features = [
-    "Experienced faculty with expertise in higher secondary education",
-    "Well-equipped laboratories and modern teaching aids",
-    "Regular career counseling and guidance sessions",
-    "Specialized coaching for entrance examinations",
-    "Industry exposure through field visits and guest lectures",
-    "Regular parent-teacher meetings to track progress",
-    "Focus on both academic excellence and personality development"
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
-      
       <section className="pt-32 pb-20 bg-gradient-to-b from-purple-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4 text-center">
@@ -61,16 +69,14 @@ const PlusTwo = () => {
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto text-center">
             Specialized streams with focus on higher education preparation and career paths.
           </p>
-          
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
-              <Link to="/admissions">Apply for Admission</Link>
+              <Link to="/apply">Apply for Admission</Link>
             </Button>
             <Button variant="outline" className="border-school-primary text-school-primary hover:bg-school-primary/10" asChild>
               <Link to="/contact">Schedule a Visit</Link>
             </Button>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <h2 className="text-3xl font-bold text-school-dark mb-4">Program Overview</h2>
@@ -88,13 +94,12 @@ const PlusTwo = () => {
             <div className="relative h-[400px] rounded-xl overflow-hidden">
               <div 
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')" }}
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1532094349884-543019a69b2f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')" }}
               ></div>
             </div>
           </div>
-          
           <h2 className="text-3xl font-bold text-school-dark mb-8 text-center">Our Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             {courses.map((course, index) => (
               <Card key={index} className={`${course.color} border-none shadow-md hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>
@@ -178,7 +183,6 @@ const PlusTwo = () => {
           </div>
         </div>
       </section>
-      
       <Footer />
     </div>
   );
