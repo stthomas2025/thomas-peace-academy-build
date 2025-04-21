@@ -9,22 +9,6 @@ import CampusEnvironmentSection from "@/components/CampusEnvironmentSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
-const SchoolModelPlaceholder = () => (
-  <div className="relative w-full h-[400px] bg-gray-100 rounded-xl overflow-hidden">
-    <div 
-      className="absolute inset-0 bg-cover bg-center" 
-      style={{ 
-        backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" 
-      }}
-    ></div>
-    <div className="absolute inset-0 bg-school-primary/30 flex flex-col items-center justify-center text-white p-6 text-center">
-      <h3 className="text-2xl font-bold mb-2">3D Campus Tour</h3>
-      <p>Our interactive 3D campus model is currently being updated.</p>
-      <p className="mt-2">Please check back later for the virtual tour experience.</p>
-    </div>
-  </div>
-);
-
 const Index = () => {
   return (
     <div className="min-h-screen font-sans">
@@ -40,12 +24,21 @@ const Index = () => {
               Explore Our Campus
             </h2>
             <p className="text-gray-600 text-lg">
-              Take a virtual tour of St. Thomas Secondary School through our interactive 3D model.
+              Take a virtual tour of St. Thomas Secondary School through our campus video.
             </p>
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <SchoolModelPlaceholder />
+            <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-lg">
+              <video 
+                className="absolute inset-0 w-full h-full object-cover"
+                controls
+                poster="/lovable-uploads/high school/founder (21).jpg"
+              >
+                <source src="/lovable-uploads/high school/st video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </section>

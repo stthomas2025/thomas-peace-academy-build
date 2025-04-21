@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
@@ -33,7 +32,6 @@ const Header = () => {
       name: "About", 
       link: "/about",
       submenu: [
-        { name: "School History", link: "/about/history" },
         { name: "Mission & Vision", link: "/about/mission" },
         { name: "Principal's Message", link: "/about/principal-message" },
       ] 
@@ -140,7 +138,7 @@ const Header = () => {
               ))}
             </ul>
             <Button className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
-              <Link to="/admissions">Apply Now</Link>
+              <Link to="/apply">Apply Now</Link>
             </Button>
           </nav>
 
@@ -195,7 +193,7 @@ const Header = () => {
             ))}
             <li>
               <Button className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
-                <Link to="/admissions" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
+                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
               </Button>
             </li>
           </ul>

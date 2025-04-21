@@ -1,9 +1,10 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, Beaker, Award } from "lucide-react";
+import { BookOpen, Beaker, Award, Bus } from "lucide-react";
 
 const Facilities = () => {
   const facilities = [
@@ -30,6 +31,14 @@ const Facilities = () => {
       link: "/facilities/sports",
       color: "bg-orange-50",
       buttonColor: "border-orange-500 text-orange-500 hover:bg-orange-50"
+    },
+    {
+      title: "Transportation",
+      icon: Bus,
+      description: "Safe and reliable transportation services covering various routes throughout the city.",
+      link: "/facilities/transportation",
+      color: "bg-yellow-50",
+      buttonColor: "border-yellow-500 text-yellow-500 hover:bg-yellow-50"
     }
   ];
 
@@ -46,7 +55,7 @@ const Facilities = () => {
             St. Thomas Secondary School provides modern facilities to enhance the learning experience and support the holistic development of our students.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {facilities.map((facility, index) => (
               <div key={index} className={`p-8 rounded-xl shadow-md ${facility.color} transform hover:scale-105 transition-all duration-300`}>
                 <facility.icon className="h-12 w-12 mx-auto mb-4 text-school-primary" />

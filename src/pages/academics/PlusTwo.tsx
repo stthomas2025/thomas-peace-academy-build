@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Microscope, Monitor, UtensilsCrossed, ArrowRight } from "lucide-react";
+import { Microscope, Monitor, Code, UtensilsCrossed, ArrowRight } from "lucide-react";
 
 const PlusTwo = () => {
   const courses = [
@@ -19,10 +19,19 @@ const PlusTwo = () => {
       buttonColor: "border-blue-500 text-blue-500 hover:bg-blue-50"
     },
     {
-      title: "Management with Computer Science",
-      description: "Blend of business management principles with computer science skills for the digital business world.",
+      title: "Management",
+      description: "Business management principles and skills for future entrepreneurs and business professionals.",
       icon: Monitor,
-      link: "/academics/courses/management-cs",
+      link: "/academics/courses/management",
+      color: "bg-green-50",
+      iconColor: "text-green-500",
+      buttonColor: "border-green-500 text-green-500 hover:bg-green-50"
+    },
+    {
+      title: "Computer Science",
+      description: "Specialized computer science education covering programming, web development, and IT infrastructure.",
+      icon: Code,
+      link: "/academics/courses/computer-science",
       color: "bg-purple-50",
       iconColor: "text-purple-500",
       buttonColor: "border-purple-500 text-purple-500 hover:bg-purple-50"
@@ -64,7 +73,7 @@ const PlusTwo = () => {
           
           <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
-              <Link to="/admissions">Apply for Admission</Link>
+              <Link to="/apply">Apply for Admission</Link>
             </Button>
             <Button variant="outline" className="border-school-primary text-school-primary hover:bg-school-primary/10" asChild>
               <Link to="/contact">Schedule a Visit</Link>
@@ -94,7 +103,7 @@ const PlusTwo = () => {
           </div>
           
           <h2 className="text-3xl font-bold text-school-dark mb-8 text-center">Our Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {courses.map((course, index) => (
               <Card key={index} className={`${course.color} border-none shadow-md hover:shadow-lg transition-all duration-300`}>
                 <CardHeader>

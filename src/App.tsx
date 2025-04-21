@@ -8,8 +8,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-
-
+import Apply from "./pages/Apply";
 
 // Academic pages
 import PreSchool from "./pages/academics/PreSchool";
@@ -21,18 +20,18 @@ import Academics from "./pages/academics/Academics";
 
 // Course pages
 import Science from "./pages/academics/courses/Science";
-import ManagementCS from "./pages/academics/courses/ManagementCS";
+import Management from "./pages/academics/courses/Management";
+import ComputerScience from "./pages/academics/courses/ComputerScience";
 import HotelManagement from "./pages/academics/courses/HotelManagement";
 
 // Facility pages
 import Library from "./pages/facilities/Library";
 import Labs from "./pages/facilities/Labs";
 import Sports from "./pages/facilities/Sports";
-import Facilities from "./pages/facilities/Facilities";
 import Transportation from "./pages/facilities/Transportation";
+import Facilities from "./pages/facilities/Facilities";
 
 // About pages
-import SchoolHistory from "./pages/about/History";
 import Mission from "./pages/about/Mission";
 import PrincipalMessage from "./pages/about/PrincipalMessage";
 
@@ -54,13 +53,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           
           {/* About Route */}
-        <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />} />
 
-        {/* About Subpages */}
-        <Route path="/about/history" element={<SchoolHistory />} />
-        <Route path="/about/mission" element={<Mission />} />
-        <Route path="/about/principal-message" element={<PrincipalMessage />} />
-        
+          {/* About Subpages */}
+          <Route path="/about/mission" element={<Mission />} />
+          <Route path="/about/principal-message" element={<PrincipalMessage />} />
           
           {/* Academic Routes */}
           <Route path="/academics" element={<Academics />} />
@@ -72,7 +69,8 @@ const App = () => (
           
           {/* Course Routes */}
           <Route path="/academics/courses/science" element={<Science />} />
-          <Route path="/academics/courses/management-cs" element={<ManagementCS />} />
+          <Route path="/academics/courses/management" element={<Management />} />
+          <Route path="/academics/courses/computer-science" element={<ComputerScience />} />
           <Route path="/academics/courses/hotel-management" element={<HotelManagement />} />
           
           {/* Facilities Routes */}
@@ -83,6 +81,7 @@ const App = () => (
           <Route path="/facilities/transportation" element={<Transportation />} />
           
           {/* Other Routes */}
+          <Route path="/apply" element={<Apply />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
