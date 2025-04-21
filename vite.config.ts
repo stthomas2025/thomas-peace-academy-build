@@ -1,14 +1,12 @@
-// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// 👇 Replace 'your-repo-name' with your actual GitHub repo name
-const repoName = 'thomas-peace-academy-build';
+const repoName = 'thomas-peace-academy-build'; // ✅ your GitHub repo name
 
 export default defineConfig(({ mode }) => ({
-  base: `/${thomas-peace-academy-build}/`, // ← ADD THIS LINE
+  base: `/${repoName}/`, // ← this works perfectly
   server: {
     host: "::",
     port: 5173,
