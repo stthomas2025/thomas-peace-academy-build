@@ -4,10 +4,8 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-
-
 export default defineConfig(({ mode }) => ({
-  base: '/thomas-peace-academy-build/', // keep as your GitHub repo name
+  // Remove the base path for Vercel deployment
   server: {
     host: "::",
     port: 8080, // REQUIRED by Lovable for dev builds

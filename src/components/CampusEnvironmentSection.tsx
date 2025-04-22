@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -32,7 +33,7 @@ const CampusEnvironmentSection = () => {
   ];
 
   return (
-    <section className="py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50" ref={sectionRef}>
+    <section className="py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50 relative" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -60,7 +61,7 @@ const CampusEnvironmentSection = () => {
             viewport={{ once: true }}
           >
             <div 
-              className="w-full h-full bg-cover bg-fixed bg-center"
+              className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" }}
             ></div>
             <div className="absolute inset-0 bg-black/30"></div>

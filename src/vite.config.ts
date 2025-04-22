@@ -5,7 +5,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: '/thomas-peace-academy-build/', // GitHub repository name
+  // Remove the base path for Vercel deployment
   server: {
     host: "::",
     port: 8080,
