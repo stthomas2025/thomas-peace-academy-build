@@ -60,11 +60,17 @@ const Header = () => {
   ];
 
   return (
-    <header
-      className={`fixed w-full z-50 overflow-visible transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-      }`}
-    >
+ <header
+  className={`fixed w-full z-50 overflow-visible transition-all duration-300 ${
+    isMenuOpen
+      ? "bg-white py-2"
+      : isScrolled
+        ? "bg-white lg:shadow-md py-2"
+        : "bg-transparent py-4"
+  }`}
+>
+
+
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
