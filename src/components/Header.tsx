@@ -18,6 +18,10 @@ const Header = () => {
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -60,44 +64,42 @@ const Header = () => {
   ];
 
   return (
- <header
-  className={`fixed w-full z-50 overflow-visible transition-all duration-300 ${
-    isMenuOpen
-      ? "bg-white py-2"
-      : isScrolled
-        ? "bg-white lg:shadow-md py-2"
-        : "bg-transparent py-4"
-  }`}
->
-
-
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isMenuOpen
+          ? "bg-white py-2"
+          : isScrolled
+          ? "bg-white lg:shadow-md py-2"
+          : "bg-transparent py-4"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center">
-              <img
-                src="/lovable-uploads/6087ea3f-7e2c-43a3-9fbf-5bf5c8ad80af.png"
-                alt="St. Thomas Secondary School"
-                className="h-16 w-auto mr-3"
-              />
-              <div>
-                <h1 className="font-serif font-bold text-xl md:text-2xl text-school-dark leading-tight">
-                  St. Thomas
-                </h1>
-                <p className="text-xs md:text-sm text-school-secondary font-medium">
-                  Secondary School & College
-                </p>
-              </div>
-            </Link>
-          </div>
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img
+              src="/lovable-uploads/6087ea3f-7e2c-43a3-9fbf-5bf5c8ad80af.png"
+              alt="St. Thomas Secondary School"
+              className="h-16 w-auto mr-3"
+            />
+            <div>
+              <h1 className="font-serif font-bold text-xl md:text-2xl text-school-dark leading-tight">
+                St. Thomas
+              </h1>
+              <p className="text-xs md:text-sm text-school-secondary font-medium">
+                Secondary School & College
+              </p>
+            </div>
+          </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex">
             <ul className="flex space-x-1">
               {menuItems.map((item, index) => (
                 <li key={index} className="relative group">
                   <Link
                     to={item.link}
-                    className={`py-2 px-3 flex items-center hover:text-school-primary text-school-dark font-medium transition-colors duration-200`}
+                    className="py-2 px-3 flex items-center hover:text-school-primary text-school-dark font-medium transition-colors duration-200"
                   >
                     {item.name}
                     {item.submenu && <ChevronDown className="ml-1 w-4 h-4" />}
@@ -128,65 +130,67 @@ const Header = () => {
             </Button>
           </nav>
 
-          <button
-            onClick={toggleMenu}
-            className="lg:hidden p-2 focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-school-dark" />
-            ) : (
-              <Menu className="w-6 h-6 text-school-dark" />
-            )}
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden z-50">
+            <button
+              onClick={toggleMenu}
+              className="p-2 focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-school-dark" />
+              ) : (
+                <Menu className="w-6 h-6 text-school-dark" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
+      {/* Slide-in Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-white z-50 transition-transform duration-300 transform ${
-          isMenuOpen ? "translate-y-0 shadow-md" : "-translate-y-full"
+        className={`lg:hidden fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-lg z-40 transform transition-transform duration-300 ease-in-out ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="container mx-auto px-4 py-4">
-          <ul className="space-y-2">
-            {menuItems.map((item, index) => (
-              <li key={index} className="py-2 border-b border-gray-100">
-                <Link
-                  to={item.link}
-                  className="block text-school-dark font-medium hover:text-school-primary transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-                {item.submenu && (
-                  <ul className="pl-4 mt-2 space-y-1 transition-opacity duration-200 ease-in-out">
-                    {item.submenu.map((subItem, subIndex) => (
-                      <li key={subIndex}>
-                        <Link
-                          to={subItem.link}
-                          className="block py-1 text-sm text-school-dark hover:text-school-primary transition-colors duration-200"
-                          onClick={() => setIsMenuOpen(false)}
-                        >
-                          {subItem.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-            <li>
-              <Button
-                className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white"
-                asChild
+        <ul className="p-6 space-y-4 overflow-y-auto h-full">
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.link}
+                className="block font-medium text-school-dark py-2 hover:text-school-primary"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>
-                  Apply Now
-                </Link>
-              </Button>
+                {item.name}
+              </Link>
+              {item.submenu && (
+                <ul className="pl-4 space-y-1">
+                  {item.submenu.map((subItem, subIndex) => (
+                    <li key={subIndex}>
+                      <Link
+                        to={subItem.link}
+                        className="block text-sm py-1 text-school-dark hover:text-school-primary"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {subItem.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
-          </ul>
-        </div>
+          ))}
+          <li>
+            <Button
+              className="w-full bg-school-secondary text-white hover:bg-school-secondary/90"
+              asChild
+            >
+              <Link to="/apply" onClick={() => setIsMenuOpen(false)}>
+                Apply Now
+              </Link>
+            </Button>
+          </li>
+        </ul>
       </div>
     </header>
   );
