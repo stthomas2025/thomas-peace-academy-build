@@ -1,6 +1,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const FacultySection = () => {
   const faculty = [
@@ -163,12 +164,7 @@ const FacultySection = () => {
           <p className="text-lg text-gray-600 mb-3">
             Our faculty is our greatest strength, dedicated to delivering excellence in education.
           </p>
-          <a 
-            href="/about" 
-            className="inline-block px-6 py-3 bg-school-primary text-white font-medium rounded-md hover:bg-school-primary/90 transition-colors duration-200"
-          >
-            Meet Our Complete Faculty
-          </a>
+          
         </motion.div>
       </div>
     </section>
