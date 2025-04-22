@@ -7,6 +7,47 @@ import { Link } from "react-router-dom";
 import { Quote } from "lucide-react";
 
 const PrincipalMessage = () => {
+  const leaders = [
+    {
+      name: "Dipen Bhusal",
+      role: "Principal",
+      image: "/lovable-uploads/Dipen Bhusal Principal.jpeg",
+      message: `Dear Students, Parents, and Well-wishers,
+
+As the Principal of St. Thomas Secondary School, I am honored to welcome you to our esteemed institution. Our school stands as a beacon of educational excellence, where we nurture not just academic achievement, but the holistic development of every student.
+
+At St. Thomas, we believe in creating an environment where learning is both challenging and enjoyable. Our dedicated faculty works tirelessly to ensure that each student discovers their unique potential and develops the skills needed for success in the modern world.
+
+We focus on fostering critical thinking, creativity, and character development, preparing our students not just for academic success, but for life itself. Our comprehensive curriculum, combined with extracurricular activities, helps shape well-rounded individuals ready to face future challenges.
+
+I invite you to be part of our educational journey, where we transform young minds into responsible, capable, and confident individuals.`,
+    },
+    {
+      name: "Shankhar Kumar Shrestha",
+      role: "Vice Principal",
+      image: "/lovable-uploads/Shankhar Kumar Shrestha Vice Principal.jpeg",
+      message: `Greetings to our school community,
+
+As Vice Principal of St. Thomas Secondary School, I am committed to supporting our students' educational journey with dedication and enthusiasm. Our focus is on creating a balanced learning environment that encourages both academic excellence and personal growth.
+
+We believe in the power of innovative teaching methods and maintaining open communication between faculty, students, and parents. Our goal is to ensure that every student receives the guidance and support they need to excel in their studies and personal development.
+
+Together with our excellent teaching staff, we strive to maintain high academic standards while nurturing creativity and critical thinking skills in our students. We are proud of our achievements and continue to work towards even greater success.`,
+    },
+    {
+      name: "Nirmala Khadka",
+      role: "Administrative Chief",
+      image: "/lovable-uploads/Nirmala Khadka Administrative Chief.jpeg",
+      message: `Dear St. Thomas Community,
+
+As the Administrative Chief, I take pride in ensuring the smooth operation of our school's administrative functions, supporting both our academic staff and students in their pursuits of excellence.
+
+Our administrative team is dedicated to providing efficient support services that enable our teachers to focus on education and our students to concentrate on learning. We work diligently to maintain an organized and welcoming environment that facilitates the best possible educational experience.
+
+We are committed to maintaining clear communication channels with parents and guardians, ensuring that all administrative processes are transparent and efficient. Our door is always open to address any concerns and support the needs of our school community.`,
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -14,104 +55,41 @@ const PrincipalMessage = () => {
       <section className="pt-32 pb-20 bg-gradient-to-b from-green-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4 text-center">
-            Principal's Message
+            Messages from Our Leadership
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto text-center">
-            Words of wisdom and guidance from our school principal.
+            Guidance and vision from our school's leadership team.
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-start">
-            <div className="md:col-span-1">
-              <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                <div className="relative h-[400px]">
-                  <div 
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url("/lovable-uploads/dhalendra sir.jpg")`}}
-
-                  ></div>
+          <div className="space-y-16">
+            {leaders.map((leader, index) => (
+              <div key={leader.name} className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                <div className="md:col-span-1">
+                  <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                    <div className="relative h-[400px]">
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="w-full h-full object-cover object-center"
+                      />
+                    </div>
+                    <div className="p-6 text-center">
+                      <h3 className="text-2xl font-bold text-school-dark mb-1">{leader.name}</h3>
+                      <p className="text-school-primary font-medium mb-4">{leader.role}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-school-dark mb-1">Mr. Dhalendra Chaudhary</h3>
-                  <p className="text-school-primary font-medium mb-4">Principal</p>
-                  <p className="text-gray-600">
-                    <br />
-                    20+ years in Educational Leadership<br />
-                    National Award for Excellence in Teaching
-                  </p>
+                
+                <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8">
+                  <Quote className="h-16 w-16 text-school-primary/20 mb-6" />
+                  <div className="space-y-6 text-gray-700 leading-relaxed">
+                    {leader.message.split('\n\n').map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="md:col-span-2 bg-white rounded-xl shadow-md p-8">
-              <Quote className="h-16 w-16 text-school-primary/20 mb-6" />
-              
-              <div className="space-y-6 text-gray-700 leading-relaxed">
-                <p>
-                  Dear Students, Parents, and Well-wishers,
-                </p>
-                <p>
-                  It is my privilege to welcome you to St. Thomas Secondary School, an institution that has been 
-                  nurturing young minds and shaping futures for over four decades. As we navigate the challenges 
-                  and opportunities of the 21st century, our commitment to providing quality education remains unwavering.
-                </p>
-                <p>
-                  At St. Thomas, we believe that education is not merely about acquiring knowledge but about 
-                  transforming lives. Our holistic approach to education focuses on developing well-rounded 
-                  individuals who excel academically, think critically, act ethically, and contribute meaningfully 
-                  to society.
-                </p>
-                <p>
-                  Our dedicated faculty, state-of-the-art facilities, and comprehensive curriculum create an 
-                  environment where students can discover their unique talents, pursue their passions, and realize 
-                  their full potential. We foster a culture of inquiry, innovation, and inclusion, preparing our 
-                  students to thrive in a rapidly changing world.
-                </p>
-                <p>
-                  To our students, I encourage you to embrace the challenges and opportunities that come your way. 
-                  Learning is a lifelong journey, and the habits, skills, and values you develop here will serve you 
-                  throughout your life. Be curious, be compassionate, and be courageous in your pursuit of excellence.
-                </p>
-                <p>
-                  To our parents and guardians, I thank you for entrusting us with your children's education. 
-                  Your partnership and support are invaluable in our shared mission of nurturing the next generation 
-                  of leaders, thinkers, and citizens.
-                </p>
-                <p>
-                  As we move forward together, let us continue to uphold the values and traditions that have made 
-                  St. Thomas Secondary School a beacon of educational excellence while embracing the innovations that 
-                  will shape our future.
-                </p>
-                <p className="font-bold">
-                  Warm regards,<br />
-                  Dr. Thomas Johnson<br />
-                  Principal
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="bg-green-50 rounded-xl p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-school-dark mb-6 text-center">Principal's Vision</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-bold text-school-dark mb-3">Academic Excellence</h3>
-                <p className="text-gray-600">
-                  To maintain the highest standards of academic rigor while making learning engaging, relevant, and accessible to all students.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-bold text-school-dark mb-3">Character Development</h3>
-                <p className="text-gray-600">
-                  To nurture individuals of strong character who embody integrity, compassion, and responsibility in all their actions.
-                </p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-bold text-school-dark mb-3">Future Readiness</h3>
-                <p className="text-gray-600">
-                  To equip students with the skills, knowledge, and mindset they need to navigate the complexities of the modern world.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">
