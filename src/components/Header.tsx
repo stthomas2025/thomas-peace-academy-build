@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -9,11 +9,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -65,11 +61,10 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 overflow-visible transition-all duration-300 ${
         isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
-
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
@@ -96,9 +91,7 @@ const Header = () => {
                 <li key={index} className="relative group">
                   <Link
                     to={item.link}
-                    className={`py-2 px-3 flex items-center hover:text-school-primary ${
-                      isScrolled ? "text-school-dark" : "text-school-dark"
-                    } font-medium transition-colors duration-200`}
+                    className={`py-2 px-3 flex items-center hover:text-school-primary text-school-dark font-medium transition-colors duration-200`}
                   >
                     {item.name}
                     {item.submenu && <ChevronDown className="ml-1 w-4 h-4" />}
@@ -144,8 +137,8 @@ const Header = () => {
       </div>
 
       <div
-        className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-md transition-transform duration-300 transform ${
-          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`lg:hidden absolute top-full left-0 w-full bg-white z-50 transition-transform duration-300 transform ${
+          isMenuOpen ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >
         <div className="container mx-auto px-4 py-4">
@@ -160,7 +153,7 @@ const Header = () => {
                   {item.name}
                 </Link>
                 {item.submenu && (
-                  <ul className="pl-4 mt-2 space-y-1">
+                  <ul className="pl-4 mt-2 space-y-1 transition-opacity duration-200 ease-in-out">
                     {item.submenu.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <Link
@@ -187,8 +180,6 @@ const Header = () => {
               </Button>
             </li>
           </ul>
-
-        
         </div>
       </div>
     </header>
