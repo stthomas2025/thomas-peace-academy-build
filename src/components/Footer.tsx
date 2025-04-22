@@ -41,7 +41,6 @@ const Footer = () => {
     <footer className="bg-school-dark text-white pt-16 relative">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* School Info */}
           <div>
             <div className="flex items-center mb-6">
               <div className="w-12 h-12 mr-3 bg-white rounded-full flex items-center justify-center">
@@ -81,7 +80,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Quick Links</h3>
             <ul className="space-y-2">
@@ -98,7 +96,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Academics */}
           <div>
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Academics</h3>
             <ul className="space-y-2">
@@ -129,7 +126,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter & Social */}
           <div>
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Stay Connected</h3>
             <p className="text-gray-300 mb-4">
@@ -186,7 +182,6 @@ const Footer = () => {
           </div>
         </div>
         
-        {/* Bottom Footer */}
         <div className="border-t border-gray-700 mt-12 py-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             © {currentYear} St. Thomas Secondary School. All rights reserved.
