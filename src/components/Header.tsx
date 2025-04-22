@@ -60,15 +60,16 @@ const Header = () => {
   ];
 
   return (
-   <header
+ <header
   className={`fixed w-full z-50 overflow-visible transition-all duration-300 ${
     isMenuOpen
-      ? "bg-white py-2" // completely remove shadow
+      ? "bg-white py-2"
       : isScrolled
-        ? "bg-white shadow-md py-2"
+        ? "bg-white lg:shadow-md py-2"
         : "bg-transparent py-4"
   }`}
 >
+
 
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
