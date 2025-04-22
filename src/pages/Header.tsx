@@ -64,25 +64,6 @@ const Header = () => {
         isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}
     >
-      {/* Top Contact Info - Only on large screens */}
-      <div className="bg-school-primary text-white py-2 px-4 hidden lg:block">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6 text-sm">
-            <div className="flex items-center space-x-1">
-              <Phone className="w-4 h-4" />
-              <span>081-521423</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Mail className="w-4 h-4" />
-              <span>nileshshrestha19@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <MapPin className="w-4 h-4" />
-              <span>Dhamboji-1. Khajura Road, Nepalganj, Nepal</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Logo and Menu */}
       <div className="container mx-auto px-4">
