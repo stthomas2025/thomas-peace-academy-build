@@ -188,20 +188,7 @@ const Header = () => {
             </li>
           </ul>
 
-          <div className="mt-6 space-y-2 text-sm">
-            <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4 text-school-primary" />
-              <span>081-521423</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail className="w-4 h-4 text-school-primary" />
-              <span>nileshshrestha19@gmail.com</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="w-4 h-4 text-school-primary" />
-              <span>Dhamboji-1. Khajura Road, Nepalganj, Nepal</span>
-            </div>
-          </div>
+        
         </div>
       </div>
     </header>
