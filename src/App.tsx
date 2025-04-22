@@ -51,7 +51,7 @@ const App = () => (
       <BrowserRouter basename="/thomas-peace-academy-build">
 
         <Routes>
-          <Route path="/" element={<Index />} />
+         <Route index element={<Index />} />
           
           {/* About Route */}
           <Route path="/about" element={<About />} />
