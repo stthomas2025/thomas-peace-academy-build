@@ -48,7 +48,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/thomas-peace-academy-build">
+
         <Routes>
           <Route path="/" element={<Index />} />
           
