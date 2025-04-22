@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -15,7 +14,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <AboutSection />
-      
+
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-12">
@@ -24,27 +23,30 @@ const Index = () => {
               Explore Our Campus
             </h2>
             <p className="text-gray-600 text-lg">
-              Take a virtual tour of St. Thomas Secondary School through our campus video.
+              Take a virtual tour of St. Thomas Secondary School through our
+              campus video.
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="relative w-full h-0 pb-[56.25%] rounded-xl overflow-hidden shadow-lg">
-              <video 
+              <video
                 className="absolute inset-0 w-full h-full object-cover"
                 controls
                 poster="/lovable-uploads/high school/founder (21).jpg"
               >
-                <source src="/lovable-uploads/high school/st video.mp4" type="video/mp4" />
+                <source
+                  src="/lovable-uploads/high school/st video.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
             </div>
           </div>
         </div>
       </section>
-      
+
       <FacilitiesSection />
-      <BoardMembersSection />
       <CampusEnvironmentSection />
       <CTASection />
       <Footer />
