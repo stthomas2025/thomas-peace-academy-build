@@ -10,17 +10,17 @@ const Transportation = () => {
   const routes = [
     {
       name: "Route A - City Center",
-      areas: ["Main Market", "Civil Lines", "Railway Colony"],
-      timing: "6:30 AM & 2:30 PM"
+      areas: ["Kohalpur", "Pipari", "Dhambojhi"],
+      timing: "to be updated "
     },
     {
       name: "Route B - Residential Area",
-      areas: ["Green Valley", "Lake View", "Hill Top"],
+      areas: ["to be updated"],
       timing: "7:00 AM & 3:00 PM"
     },
     {
       name: "Route C - Suburban",
-      areas: ["New Colony", "Garden Town", "Park View"],
+      areas: ["to be updated"],
       timing: "7:15 AM & 3:15 PM"
     }
   ];
