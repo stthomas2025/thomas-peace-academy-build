@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
@@ -29,16 +28,16 @@ const Header = () => {
 
   const menuItems = [
     { name: "Home", link: "/" },
-    { 
-      name: "About", 
+    {
+      name: "About",
       link: "/about",
       submenu: [
         { name: "Mission & Vision", link: "/about/mission" },
-        { name: "Principal's Message", link: "/about/principal-message" },
-      ] 
+        { name: "Our Leadership", link: "/about/principal-message" },
+      ],
     },
-    { 
-      name: "Academics", 
+    {
+      name: "Academics",
       link: "/academics",
       submenu: [
         { name: "Pre-School (Nursery-UKG)", link: "/academics/pre-school" },
@@ -46,17 +45,17 @@ const Header = () => {
         { name: "Middle School (VI-VIII)", link: "/academics/middle" },
         { name: "High School (IX-X)", link: "/academics/high" },
         { name: "Plus Two (XI-XII)", link: "/academics/plus-two" },
-      ] 
+      ],
     },
-    { 
-      name: "Facilities", 
+    {
+      name: "Facilities",
       link: "/facilities",
       submenu: [
         { name: "Library", link: "/facilities/library" },
         { name: "Laboratories", link: "/facilities/labs" },
         { name: "Transportation", link: "/facilities/transportation" },
         { name: "Sports", link: "/facilities/sports" },
-      ] 
+      ],
     },
     { name: "Blog", link: "/blog" },
     { name: "Admissions", link: "/admissions" },
@@ -65,7 +64,11 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+      }`}
+    >
       <div className="bg-school-primary text-white py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-6 text-sm">
@@ -89,7 +92,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img 
+              <img
                 src="/lovable-uploads/6087ea3f-7e2c-43a3-9fbf-5bf5c8ad80af.png"
                 alt="St. Thomas Secondary School"
                 className="h-16 w-auto mr-3"
@@ -109,14 +112,16 @@ const Header = () => {
             <ul className="flex space-x-1">
               {menuItems.map((item, index) => (
                 <li key={index} className="relative group">
-                  <Link 
-                    to={item.link} 
-                    className={`py-2 px-3 flex items-center hover:text-school-primary ${isScrolled ? "text-school-dark" : "text-school-dark"} font-medium transition-colors duration-200`}
+                  <Link
+                    to={item.link}
+                    className={`py-2 px-3 flex items-center hover:text-school-primary ${
+                      isScrolled ? "text-school-dark" : "text-school-dark"
+                    } font-medium transition-colors duration-200`}
                   >
                     {item.name}
                     {item.submenu && <ChevronDown className="ml-1 w-4 h-4" />}
                   </Link>
-                  
+
                   {item.submenu && (
                     <ul className="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform translate-y-2 group-hover:translate-y-0">
                       {item.submenu.map((subItem, subIndex) => (
@@ -134,7 +139,10 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <Button className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
+            <Button
+              className="ml-4 bg-school-secondary hover:bg-school-secondary/90 text-white"
+              asChild
+            >
               <Link to="/apply">Apply Now</Link>
             </Button>
           </nav>
@@ -187,8 +195,13 @@ const Header = () => {
               </li>
             ))}
             <li>
-              <Button className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white" asChild>
-                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>Apply Now</Link>
+              <Button
+                className="w-full mt-4 bg-school-secondary hover:bg-school-secondary/90 text-white"
+                asChild
+              >
+                <Link to="/apply" onClick={() => setIsMenuOpen(false)}>
+                  Apply Now
+                </Link>
               </Button>
             </li>
           </ul>
