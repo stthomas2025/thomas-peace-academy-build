@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,10 +8,9 @@ const Gallery = () => {
   const galleryImages = {
     "Campus & Infrastructure": [
       {
-        src: "/lovable-uploads/6d96e37e-503b-46a2-805d-bb1eadc02ace.png",
+        src: "/thomas-peace-academy-build/lovable-uploads/6d96e37e-503b-46a2-805d-bb1eadc02ace.png",
         alt: "St. Thomas School Building",
         caption: "Our Modern School Building", 
-
       }
     ],
     "Academic Excellence": [

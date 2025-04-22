@@ -33,9 +33,9 @@ const Index = () => {
               <video 
                 className="absolute inset-0 w-full h-full object-cover"
                 controls
-                poster="/lovable-uploads/high school/founder (21).jpg"
+                poster="/thomas-peace-academy-build/lovable-uploads/high school/founder (21).jpg"
               >
-                <source src="/lovable-uploads/high school/st video.mp4" type="video/mp4" />
+                <source src="/thomas-peace-academy-build/lovable-uploads/high school/st video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
