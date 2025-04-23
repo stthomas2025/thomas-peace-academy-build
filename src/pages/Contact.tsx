@@ -1,9 +1,12 @@
+
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   const [formLoading, setFormLoading] = useState(false);
@@ -25,6 +28,17 @@ const Contact = () => {
     };
 
     try {
+      // First, store the submission in Supabase
+      const { error: supabaseError } = await supabase
+        .from('contact_submissions')
+        .insert(data);
+      
+      if (supabaseError) {
+        console.error("Supabase error:", supabaseError);
+        throw new Error(supabaseError.message || "Error saving submission");
+      }
+
+      // Then, send the email via Mailjet edge function
       const res = await fetch(
         "https://yumsqjykylhspozmfoza.functions.supabase.co/send-contact-mailjet",
         {
@@ -34,11 +48,24 @@ const Contact = () => {
         }
       );
       const json = await res.json();
+      
       if (!res.ok) throw new Error(json.error || "Error sending email.");
+      
       setFormSent(true);
       form.reset();
+      toast({
+        title: "Message Sent",
+        description: "Your message has been sent successfully!",
+        duration: 5000,
+      });
     } catch (err: any) {
       setFormError(err.message || "Unknown error.");
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: err.message || "Failed to send message. Please try again.",
+        duration: 5000,
+      });
     } finally {
       setFormLoading(false);
     }
