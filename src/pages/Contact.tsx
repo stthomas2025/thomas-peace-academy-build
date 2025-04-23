@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -16,8 +15,12 @@ const Contact = () => {
         <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-school-dark">Contact Us</h1>
-            <p className="text-xl text-gray-600">Get in touch with St. Thomas Secondary School for admissions, inquiries, or feedback.</p>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-school-dark">
+              Contact Us
+            </h1>
+            <p className="text-xl text-gray-600">
+              Get in touch with St. Thomas English Secondary School. for admissions, inquiries, or feedback.
+            </p>
           </div>
         </div>
       </div>
@@ -119,7 +122,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-800 mb-1">Address</h3>
-                      <p className="text-gray-600">Dhamboji-1. Khajura Road, Nepalganj, Nepal</p>
+                      <p className="text-gray-600">
+                        Dhamboji-1. Khajura Road, Nepalganj, Nepal
+                      </p>
                     </div>
                   </div>
                   
@@ -129,7 +134,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-800 mb-1">Phone</h3>
-                      <p className="text-gray-600">081-521423</p>
+                      <p className="text-gray-600">
+                        081-534463, 533011, 9864986126, 9843173105
+                      </p>
                     </div>
                   </div>
                   
@@ -139,7 +146,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-800 mb-1">Email</h3>
-                      <p className="text-gray-600">nileshshrestha19@gmail.com</p>
+                      <p className="text-gray-600">schoolstthoms@gmail.com</p>
                     </div>
                   </div>
                   

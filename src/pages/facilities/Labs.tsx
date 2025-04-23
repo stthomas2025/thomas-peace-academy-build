@@ -11,29 +11,33 @@ const Labs = () => {
     {
       icon: Beaker,
       title: "Chemistry Lab",
-      description: "State-of-the-art chemistry laboratory equipped with modern apparatus and safety equipment."
+      description: "State-of-the-art chemistry laboratory equipped with modern apparatus and safety equipment.",
+      img: "/lovable-uploads/high school/lab 1.jpg"
     },
     {
       icon: Microscope,
       title: "Biology Lab",
-      description: "Advanced biology lab with microscopes and specimens for practical learning."
+      description: "Advanced biology lab with microscopes and specimens for practical learning.",
+      img: "/lovable-uploads/high school/lab bio.jpg"
     },
     {
       icon: Monitor,
       title: "Computer Lab",
-      description: "Modern computer lab with latest hardware and software for digital literacy."
+      description: "Modern computer lab with latest hardware and software for digital literacy.",
+      img: "/lovable-uploads/photo-1461749280684-dccba630e2f6.jpeg"
     },
     {
       icon: Dna,
       title: "Physics Lab",
-      description: "Well-equipped physics laboratory for conducting experiments and research."
+      description: "Well-equipped physics laboratory for conducting experiments and research.",
+      img: "/lovable-uploads/high school/founder (28).jpg"
     }
   ];
 
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <section className="pt-32 pb-20 bg-gradient-to-b from-green-50 to-white">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-4 text-center">
@@ -42,11 +46,18 @@ const Labs = () => {
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto text-center">
             State-of-the-art laboratories for hands-on learning and practical education.
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {facilities.map((facility, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
                 <facility.icon className="h-12 w-12 text-school-primary mb-4" />
+                {facility.img && (
+                  <img
+                    src={facility.img}
+                    alt={facility.title}
+                    className="rounded-lg mb-4 w-full h-36 object-cover"
+                  />
+                )}
                 <h3 className="text-xl font-bold text-school-dark mb-2">{facility.title}</h3>
                 <p className="text-gray-600">{facility.description}</p>
               </div>
@@ -77,7 +88,7 @@ const Labs = () => {
                 </ul>
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden">
-                <div 
+                <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}
                 ></div>
@@ -92,7 +103,7 @@ const Labs = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

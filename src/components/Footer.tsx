@@ -48,10 +48,10 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-serif font-bold text-xl leading-tight">
-                  St. Thomas
+                  St. Thomas English Secondary School.
                 </h3>
                 <p className="text-sm text-gray-300">
-                  Secondary School & College
+                  Established 1990 (2047 BS)
                 </p>
               </div>
             </div>
@@ -67,11 +67,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 text-school-accent mr-3 flex-shrink-0" />
-                <span className="text-gray-300">081-521423</span>
+                <span className="text-gray-300">081-534463, 533011, 9864986126, 9843173105</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-school-accent mr-3 flex-shrink-0" />
-                <span className="text-gray-300">nileshshrestha19@gmail.com</span>
+                <span className="text-gray-300">schoolstthoms@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <Clock className="w-5 h-5 text-school-accent mr-3 flex-shrink-0" />

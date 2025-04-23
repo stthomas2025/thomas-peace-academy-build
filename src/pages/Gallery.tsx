@@ -11,7 +11,7 @@ const Gallery = () => {
       {
         src: "/lovable-uploads/6d96e37e-503b-46a2-805d-bb1eadc02ace.png",
         alt: "St. Thomas School Building",
-        caption: "Our Modern School Building", 
+        caption: "Our Modern School Building",
       }
     ],
     "Academic Excellence": [
@@ -55,6 +55,33 @@ const Gallery = () => {
         caption: "Our Achievements"
       }
     ],
+    "Pre-School Moments": [
+      {
+        src: "/lovable-uploads/pre school/founder (12).jpg",
+        alt: "Playful Kids' Room",
+        caption: "Playful Kids' Room"
+      },
+      {
+        src: "/lovable-uploads/pre school/founder (13).jpg",
+        alt: "Interactive Learning Activities",
+        caption: "Interactive Learning Activities"
+      },
+      {
+        src: "/lovable-uploads/pre school/founder (14).jpg",
+        alt: "Creative Arts Time",
+        caption: "Creative Arts Time"
+      },
+      {
+        src: "/lovable-uploads/pre school/founder (15).jpg",
+        alt: "Outdoor Fun with Class",
+        caption: "Outdoor Fun with Class"
+      },
+      {
+        src: "/lovable-uploads/pre school/founder (16).jpg",
+        alt: "Story Time Session",
+        caption: "Story Time Session"
+      }
+    ],
     "School Life": [
       {
         src: "/lovable-uploads/1st batch photo.jpg",
@@ -72,7 +99,7 @@ const Gallery = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
-      
+
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -80,7 +107,7 @@ const Gallery = () => {
               School Gallery
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Capturing moments of learning, growth, and celebration at St. Thomas Secondary School.
+              Capturing moments of learning, growth, and celebration at St. Thomas English Secondary School.
             </p>
           </div>
 
@@ -119,10 +146,9 @@ const Gallery = () => {
           ))}
         </div>
       </main>
-      
+
       <Footer />
     </div>
   );
 };
-
 export default Gallery;
