@@ -19,7 +19,10 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-xl text-gray-600">
-              Get in touch with St. Thomas English Secondary School. for admissions, inquiries, or feedback.
+              Get in touch with St. Thomas English Secondary School for admissions, inquiries, or feedback.
+            </p>
+            <p className="mt-2 text-gray-600 text-lg font-medium">
+              Established: 1990 (2047 BS)
             </p>
           </div>
         </div>
@@ -164,7 +167,6 @@ const Contact = () => {
                 </div>
               </div>
               
-              {/* Map Embed */}
               <div className="rounded-xl overflow-hidden h-[300px] shadow-lg">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5686465095426!2d81.6216!3d28.0473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a33e85dc6b885%3A0x8e47ee1a30713c8c!2sNepalgunj%2C%20Nepal!5e0!3m2!1sen!2sus!4v1625014589842!5m2!1sen!2sus" 

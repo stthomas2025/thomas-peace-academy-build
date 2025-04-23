@@ -24,6 +24,38 @@ const preschoolImages = [
   {
     src: "/lovable-uploads/pre school/founder (16).jpg",
     caption: "Story Time Session"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (17).jpg",
+    caption: "Group Activities"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (18).jpg",
+    caption: "Circle Time"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (19).jpg",
+    caption: "Creative Play"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (20).jpg",
+    caption: "Friendship and Sharing"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (24).jpg",
+    caption: "Craft and Colors"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (25).jpg",
+    caption: "Learning Through Play"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (26).jpg",
+    caption: "Early Education"
+  },
+  {
+    src: "/lovable-uploads/pre school/founder (30).jpg",
+    caption: "Activity Time"
   }
 ];
 
@@ -36,6 +68,9 @@ const PreSchool = () => {
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-6 text-center">
             Pre-School (Nursery - UKG)
           </h1>
+          <p className="text-center text-gray-700 font-medium mb-4">
+            St. Thomas English Secondary School | Established: 1990 (2047 BS)
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
             {preschoolImages.map((img, idx) => (
               <Card key={idx} className="overflow-hidden shadow-md">
