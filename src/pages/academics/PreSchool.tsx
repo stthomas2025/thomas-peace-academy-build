@@ -3,12 +3,45 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { GraduationCap, BookOpen, Heart, Shield, Music, Users, Award } from "lucide-react";
+
 
 const preschoolImages = [
-  {
+  
+   {
+        icon: BookOpen,
+        title: "Interactive Learning",
+        description: "Age-appropriate activities that make learning fun and engaging for young minds."
+      },
+      {
+        icon: Heart,
+        title: "Nurturing Environment",
+        description: "A caring atmosphere where children feel safe, loved, and encouraged to explore."
+      },
+      {
+        icon: Shield,
+        title: "Safety First",
+        description: "Comprehensive safety measures to ensure the well-being of every child in our care."
+      },
+      {
+        icon: Music,
+        title: "Creative Expression",
+        description: "Various activities that promote artistic development and self-expression."
+      },
+      {
+        icon: Users,
+        title: "Social Development",
+        description: "Opportunities for children to develop essential social and emotional skills."
+      },
+      {
+        icon: Award,
+        title: "Growth Milestones",
+        description: "Regular assessment of developmental milestones to track each child's progress."
+      },
+    {
     src: "/lovable-uploads/pre school/founder (12).jpg",
     caption: "Playful Kids' Room"
-  },
+    },
   {
     src: "/lovable-uploads/pre school/founder (13).jpg",
     caption: "Interactive Learning Activities"
@@ -69,33 +102,8 @@ const PreSchool = () => {
     <div className="min-h-screen">
       <Header />
       <main className="pt-32 pb-20 bg-gradient-to-b from-pink-50 to-white">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-school-dark mb-6 text-center">
-            Pre-School (Nursery - UKG)
-          </h1>
-          <p className="text-center text-gray-700 font-medium mb-4">
-            St. Thomas English Secondary School | Established: 1990 (2047 BS)
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-8">
-            {preschoolImages.map((img, idx) => (
-              <Card key={idx} className="overflow-hidden shadow-md">
-                <img
-                  src={img.src}
-                  alt={img.caption}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-4 text-center">
-                  <span className="text-gray-700">{img.caption}</span>
-                </div>
-              </Card>
-            ))}
-          </div>
-          <div className="max-w-2xl mx-auto mb-8">
-            <p className="text-lg text-gray-600 text-center">
-              Our pre-school program is designed to foster curiosity, creativity, and foundational skills in a fun, safe environment.
-            </p>
-          </div>
-        </div>
+        
+     
       </main>
       <Footer />
     </div>
