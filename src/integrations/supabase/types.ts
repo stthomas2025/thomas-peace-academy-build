@@ -9,7 +9,87 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      application_submissions: {
+        Row: {
+          additional_info: string | null
+          address: string
+          applying_for: string
+          created_at: string
+          date_of_birth: string
+          email: string
+          emergency_contact: string
+          gender: string
+          health_conditions: string | null
+          id: string
+          parent_name: string
+          phone: string
+          previous_school: string | null
+          student_name: string
+        }
+        Insert: {
+          additional_info?: string | null
+          address: string
+          applying_for: string
+          created_at?: string
+          date_of_birth: string
+          email: string
+          emergency_contact: string
+          gender: string
+          health_conditions?: string | null
+          id?: string
+          parent_name: string
+          phone: string
+          previous_school?: string | null
+          student_name: string
+        }
+        Update: {
+          additional_info?: string | null
+          address?: string
+          applying_for?: string
+          created_at?: string
+          date_of_birth?: string
+          email?: string
+          emergency_contact?: string
+          gender?: string
+          health_conditions?: string | null
+          id?: string
+          parent_name?: string
+          phone?: string
+          previous_school?: string | null
+          student_name?: string
+        }
+        Relationships: []
+      }
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          phone: string | null
+          subject: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          phone?: string | null
+          subject?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

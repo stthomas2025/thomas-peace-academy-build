@@ -1,1 +1,5 @@
+
 project_id = "yumsqjykylhspozmfoza"
+
+[functions.send-contact-mailjet]
+verify_jwt = false

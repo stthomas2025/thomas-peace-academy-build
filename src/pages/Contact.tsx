@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -6,6 +6,44 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 const Contact = () => {
+  const [formLoading, setFormLoading] = useState(false);
+  const [formSent, setFormSent] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+
+  const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setFormError(null);
+    setFormSent(false);
+    setFormLoading(true);
+    const form = e.currentTarget;
+    const data = {
+      name: (form as any).name.value,
+      email: (form as any).email.value,
+      phone: (form as any).phone.value,
+      subject: (form as any).subject.value,
+      message: (form as any).message.value,
+    };
+
+    try {
+      const res = await fetch(
+        "https://yumsqjykylhspozmfoza.functions.supabase.co/send-contact-mailjet",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error || "Error sending email.");
+      setFormSent(true);
+      form.reset();
+    } catch (err: any) {
+      setFormError(err.message || "Unknown error.");
+    } finally {
+      setFormLoading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen font-sans">
       <Header />
@@ -41,7 +79,7 @@ const Contact = () => {
               className="bg-white p-8 rounded-xl shadow-lg"
             >
               <h2 className="text-2xl font-serif font-bold text-school-dark mb-6">Send Us a Message</h2>
-              <form>
+              <form onSubmit={handleContactSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label className="block text-gray-700 mb-2" htmlFor="name">
@@ -50,8 +88,10 @@ const Contact = () => {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-school-primary"
                       placeholder="John Doe"
+                      required
                     />
                   </div>
                   <div>
@@ -61,8 +101,10 @@ const Contact = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-school-primary"
                       placeholder="johndoe@example.com"
+                      required
                     />
                   </div>
                 </div>
@@ -74,6 +116,7 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-school-primary"
                     placeholder="+977 XXXXXXXXXX"
                   />
@@ -86,6 +129,7 @@ const Contact = () => {
                   <input
                     type="text"
                     id="subject"
+                    name="subject"
                     className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-school-primary"
                     placeholder="Admission Inquiry"
                   />
@@ -97,15 +141,30 @@ const Contact = () => {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     rows={5}
                     className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-school-primary"
                     placeholder="Type your message here..."
+                    required
                   ></textarea>
                 </div>
-                
-                <Button className="bg-school-primary hover:bg-school-primary/90 text-white w-full py-3 flex items-center justify-center">
-                  Send Message <Send className="ml-2 h-4 w-4" />
+                <Button
+                  disabled={formLoading}
+                  className="bg-school-primary hover:bg-school-primary/90 text-white w-full py-3 flex items-center justify-center"
+                >
+                  {formLoading ? "Sending..." : "Send Message"}
+                  <Send className="ml-2 h-4 w-4" />
                 </Button>
+                {formSent && (
+                  <div className="mt-4 text-green-600 font-semibold">
+                    Thank you! Your message has been sent.
+                  </div>
+                )}
+                {formError && (
+                  <div className="mt-4 text-red-600 font-semibold">
+                    {formError}
+                  </div>
+                )}
               </form>
             </motion.div>
             
