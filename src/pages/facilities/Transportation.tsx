@@ -28,11 +28,11 @@ const Transportation = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      
+
       <section className="pt-32 pb-20 bg-gradient-to-b from-school-primary/10 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -53,8 +53,8 @@ const Transportation = () => {
                 transition={{ delay: 0.2, duration: 0.6 }}
                 className="relative rounded-xl overflow-hidden shadow-2xl"
               >
-                <img 
-                  src="/lovable-uploads/st thomas bus.jpg" 
+                <img
+                  src="/lovable-uploads/st thomas bus.jpeg"
                   alt="St. Thomas School Bus"
                   className="w-full h-auto"
                 />
@@ -70,7 +70,8 @@ const Transportation = () => {
                   Our Fleet
                 </h2>
                 <p className="text-gray-600">
-                  Our transportation fleet consists of modern, well-maintained buses equipped with:
+                  Our transportation fleet consists of modern, well-maintained
+                  buses equipped with:
                 </p>
                 <ul className="space-y-4">
                   {[
@@ -78,7 +79,7 @@ const Transportation = () => {
                     "Experienced and licensed drivers",
                     "First aid kits and safety equipment",
                     "Regular maintenance and safety checks",
-                    "Air conditioning for comfortable travel"
+                    "Air conditioning for comfortable travel",
                   ].map((feature, index) => (
                     <li key={index} className="flex items-start">
                       <Bus className="w-5 h-5 text-school-primary mt-1 mr-3" />
@@ -102,7 +103,9 @@ const Transportation = () => {
                     transition={{ delay: index * 0.2, duration: 0.6 }}
                     className="bg-white p-6 rounded-lg shadow-md"
                   >
-                    <h3 className="text-xl font-bold text-school-primary mb-4">{route.name}</h3>
+                    <h3 className="text-xl font-bold text-school-primary mb-4">
+                      {route.name}
+                    </h3>
                     <div className="space-y-4">
                       <div className="flex items-start">
                         <MapPin className="w-5 h-5 text-school-primary mt-1 mr-2" />
@@ -130,7 +133,8 @@ const Transportation = () => {
                 Contact Transportation Department
               </h2>
               <p className="text-gray-600 mb-6">
-                For queries regarding bus routes, timings, or transportation fees
+                For queries regarding bus routes, timings, or transportation
+                fees
               </p>
               <div className="flex justify-center items-center space-x-6">
                 <div className="flex items-center">
@@ -145,7 +149,7 @@ const Transportation = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
