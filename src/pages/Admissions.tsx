@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, GraduationCap, Users, Book } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Admissions = () => {
   const admissionSteps = [
@@ -68,8 +69,10 @@ const Admissions = () => {
             <p className="text-xl text-gray-600 mb-8">
               Join St. Thomas English Secondary School and experience quality education in a nurturing environment.
             </p>
-            <Button className="bg-school-primary hover:bg-school-primary/90">
-              Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+            <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
+              <Link to="/apply">
+                Apply Now <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
           </motion.div>
 
@@ -90,7 +93,7 @@ const Admissions = () => {
             ))}
           </div>
 
-          {/* Fee Structure */}
+          {/* Fee Structure (number only, no amount!) */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-16">
             <h2 className="text-3xl font-bold text-school-dark mb-6 text-center">Fee Structure</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Brain, Users, Sparkles, Medal, Clock } from "lucide-react";
@@ -289,58 +288,6 @@ const PrimarySchool = () => {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Faculty Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark mb-4">
-              Meet Our Primary School Faculty
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Our experienced and passionate teachers are dedicated to nurturing young minds 
-              and helping students reach their full potential.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {faculty.map((member, index) => (
-              <motion.div 
-                key={index} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="relative overflow-hidden h-64">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-4 text-white">
-                      <p className="font-medium">Experience: {member.experience}</p>
-                      <p className="text-sm text-white/90">{member.qualification}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-school-dark mb-1">{member.name}</h3>
-                  <p className="text-school-primary font-medium">{member.position}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Button variant="outline" className="border-school-primary text-school-primary hover:bg-school-primary/10">
-              View All Faculty Members
-            </Button>
           </div>
         </div>
       </section>

@@ -56,6 +56,11 @@ const preschoolImages = [
   {
     src: "/lovable-uploads/pre school/founder (30).jpg",
     caption: "Activity Time"
+  },
+  // Extra added for diversity (if existing in uploads, user can swap/remove):
+  {
+    src: "/lovable-uploads/pre school.jpeg",
+    caption: "Pre-School Entrance"
   }
 ];
 
