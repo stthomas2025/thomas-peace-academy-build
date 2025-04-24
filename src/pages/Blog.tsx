@@ -20,7 +20,7 @@ const blogPosts = [
       "Discover why St. Thomas stands out with its legacy of excellence, modern curriculum, and holistic development in Nepalgunj.",
     date: "2025-04-24",
     category: "Overview",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (21).jpg",
   },
   {
     id: 2,
@@ -29,25 +29,25 @@ const blogPosts = [
       "Explore how St. Thomas nurtures students from pre-school to +2 with a seamless, supportive academic path.",
     date: "2025-04-23",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/pre school/founder (12).jpg",
   },
   {
     id: 3,
-    title: "Shaping Tomorrow’s Scientists: The +2 Science Program",
+    title: "Shaping Tomorrow's Scientists: The +2 Science Program",
     excerpt:
       "Learn about the robust +2 Science program preparing students for careers in medicine, engineering, and research.",
     date: "2025-04-22",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/lab bio.jpg",
   },
   {
     id: 4,
-    title: "Empowering Tomorrow’s Leaders: The +2 Management Program",
+    title: "Empowering Tomorrow's Leaders: The +2 Management Program",
     excerpt:
       "The +2 Management stream equips students with business skills for entrepreneurship and leadership roles.",
     date: "2025-04-21",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (28).jpg",
   },
   {
     id: 5,
@@ -56,26 +56,25 @@ const blogPosts = [
       "Dive into the +2 Computer Science program, fostering coding skills and innovation for tech careers.",
     date: "2025-04-20",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/computer lap.jpeg",
   },
   {
     id: 6,
-    title:
-      "Crafting Hospitality Professionals: The +2 Hotel Management Program",
+    title: "Crafting Hospitality Professionals: The +2 Hotel Management Program",
     excerpt:
       "Discover how the +2 Hotel Management program prepares students for thriving careers in hospitality and tourism.",
     date: "2025-04-19",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (32).jpg",
   },
   {
     id: 7,
     title: "The Heart of Excellence – Meet the Faculty of St. Thomas",
     excerpt:
-      "Meet the dedicated faculty shaping students’ futures with expertise and care at St. Thomas.",
+      "Meet the dedicated faculty shaping students' futures with expertise and care at St. Thomas.",
     date: "2025-04-18",
     category: "Faculty",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/faculty.jpg",
   },
   {
     id: 8,
@@ -84,7 +83,7 @@ const blogPosts = [
       "Explore the serene and nurturing environment at St. Thomas, fostering academic and emotional growth.",
     date: "2025-04-17",
     category: "Environment",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (37).jpg",
   },
   {
     id: 9,
@@ -93,16 +92,16 @@ const blogPosts = [
       "Celebrate the inspiring achievements of St. Thomas students, from scholarships to global careers.",
     date: "2025-04-16",
     category: "Achievements",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (39).jpg",
   },
   {
     id: 10,
     title: "What Parents Say – Heartfelt Testimonials from Families",
     excerpt:
-      "Hear from parents about their trust and satisfaction with St. Thomas’s education and support.",
+      "Hear from parents about their trust and satisfaction with St. Thomas's education and support.",
     date: "2025-04-15",
     category: "Community",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (4).jpg",
   },
   {
     id: 11,
@@ -111,7 +110,7 @@ const blogPosts = [
       "Discover how St. Thomas offers a consistent educational path from pre-school to +2 for lifelong growth.",
     date: "2025-04-14",
     category: "Academics",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/pre school/founder (13).jpg",
   },
   {
     id: 12,
@@ -120,7 +119,7 @@ const blogPosts = [
       "A summary of why St. Thomas excels with its academics, faculty, and nurturing environment.",
     date: "2025-04-13",
     category: "Overview",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (21).jpg",
   },
 ];
 

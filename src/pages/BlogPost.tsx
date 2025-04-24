@@ -12,113 +12,113 @@ const blogPosts = [
     content: `
       In the heart of Nepalgunj, a city buzzing with life, culture, and opportunity, stands an educational institution that has steadily built a legacy of excellence—St. Thomas Secondary English School. More than just a place of learning, it has become a cornerstone of holistic development, academic distinction, and community trust.
 
-      ### A Legacy of Educational Excellence
+      A Legacy of Educational Excellence
       Established with a vision to provide world-class education while nurturing values and character, St. Thomas has grown into a leading school known for its disciplined structure, dynamic curriculum, and innovative teaching practices. Over the years, it has created a nurturing space for children of all age groups—from playful pre-schoolers to ambitious high school graduates preparing for their future.
 
-      ### English-Medium, Value-Based Learning
+      English-Medium, Value-Based Learning
       At St. Thomas, English is not merely a subject but the medium of instruction. This provides students with a strong command of the global language, enabling them to communicate effectively and confidently, both within Nepal and on international platforms.
 
-      ### Modern Curriculum with a Global Outlook
+      Modern Curriculum with a Global Outlook
       While rooted in the national curriculum, St. Thomas integrates global best practices in education. From digital learning tools to interactive sessions, field trips, and real-world projects, students are constantly encouraged to explore, question, and innovate.
 
-      ### Individual Attention and Inclusive Growth
+      Individual Attention and Inclusive Growth
       One of the key strengths of St. Thomas is its student-centered approach. With well-balanced teacher-student ratios and a focus on personalized mentorship, every child is given the space and support to grow at their own pace.
 
-      ### Infrastructure That Inspires Learning
+      Infrastructure That Inspires Learning
       Spread across a spacious campus, the school boasts state-of-the-art facilities including modern science labs, computer labs, multimedia rooms, and well-stocked libraries. Classrooms are well-lit and equipped with smart boards and interactive teaching tools.
 
-      ### A Beacon of Stability in a Changing World
-      In today’s fast-changing world, stability is a luxury. For over a decade, St. Thomas has been that reliable pillar in Nepalgunj—constantly evolving yet remaining true to its core mission.
+      A Beacon of Stability in a Changing World
+      In today's fast-changing world, stability is a luxury. For over a decade, St. Thomas has been that reliable pillar in Nepalgunj—constantly evolving yet remaining true to its core mission.
 
-      ### A Community That Cares
+      A Community That Cares
       What truly makes St. Thomas exceptional is its people. The school has cultivated a caring, close-knit community where teachers know their students, alumni return to mentor juniors, and parents are actively involved.
 
-      ### Proven Track Record
+      Proven Track Record
       St. Thomas graduates are now doctors, engineers, entrepreneurs, hospitality professionals, and IT experts, contributing not just to Nepal but also working globally.
 
-      ### Trusted by Generations
+      Trusted by Generations
       Parents trust St. Thomas not just because of its academic rigor but because of its integrity and transparency. Regular parent-teacher meetings, digital progress reports, and open communication channels ensure that families feel involved.
 
-      ### Final Thoughts
-      As Nepalgunj continues to grow, so does the need for institutions that can lead the way in shaping future citizens. St. Thomas isn’t just keeping up—it’s leading with dedication to excellence, strong moral foundation, and a future-ready outlook.
+      Final Thoughts
+      As Nepalgunj continues to grow, so does the need for institutions that can lead the way in shaping future citizens. St. Thomas isn't just keeping up—it's leading with dedication to excellence, strong moral foundation, and a future-ready outlook.
     `,
     date: "2025-04-24",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (21).jpg",
   },
   {
     id: 2,
     title: "From Pre-School to +2: The Complete Academic Journey at St. Thomas",
     content: `
-      At St. Thomas Secondary English School in Nepalgunj, education is not just about reaching academic milestones—it’s about shaping lives from the earliest years to the threshold of adulthood. With a comprehensive academic structure spanning pre-school to +2, the school provides a consistent, nurturing, and progressive learning environment.
+      At St. Thomas Secondary English School in Nepalgunj, education is not just about reaching academic milestones—it's about shaping lives from the earliest years to the threshold of adulthood. With a comprehensive academic structure spanning pre-school to +2, the school provides a consistent, nurturing, and progressive learning environment.
 
-      ### The Foundation: Pre-School
+      The Foundation: Pre-School
       The educational journey begins with a vibrant pre-school program, where children as young as three are welcomed into a safe and joyful environment. This stage emphasizes learning through play, creativity, and social interaction.
 
-      #### Key Features:
+      Key Features:
       - Montessori-inspired teaching
       - Safe and colorful classrooms
       - Focus on communication skills
       - Emotional and social development
 
-      ### Primary Level: Grades 1–5
+      Primary Level: Grades 1–5
       The primary years focus on developing essential academic skills while nurturing a love for learning. Core subjects are introduced in a structured yet engaging manner.
 
-      ### Lower Secondary: Grades 6–8
+      Lower Secondary: Grades 6–8
       As students move into lower secondary, the curriculum becomes more structured and subject-focused, building the foundation for national examinations.
 
-      ### Secondary Level: Grades 9–10
+      Secondary Level: Grades 9–10
       This phase prepares students for the Secondary Education Examination (SEE) with intensive support and experienced faculty.
 
-      ### Higher Secondary Level (+2): Grades 11–12
-      Students choose from Science, Management, Computer Science, or Hotel Management streams, all aligned with Nepal’s National Examination Board (NEB).
+      Higher Secondary Level (+2): Grades 11–12
+      Students choose from Science, Management, Computer Science, or Hotel Management streams, all aligned with Nepal's National Examination Board (NEB).
 
-      ### Continuity That Builds Confidence
+      Continuity That Builds Confidence
       The smooth transition between academic levels ensures familiarity, continuous tracking, and reduced stress during transitions.
 
-      ### Beyond the Books
+      Beyond the Books
       Students engage in sports, music, art, drama, and community service, helping them discover talents and develop compassion.
 
-      ### Final Thoughts
-      Whether it’s a kindergartner’s curiosity or a +2 graduate’s ambition, St. Thomas ensures every stage of a student’s development is nurtured with expert guidance and care.
+      Final Thoughts
+      Whether it's a kindergartner's curiosity or a +2 graduate's ambition, St. Thomas ensures every stage of a student's development is nurtured with expert guidance and care.
     `,
     date: "2025-04-23",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/pre school/founder (12).jpg",
   },
   {
     id: 3,
-    title: "Shaping Tomorrow’s Scientists: The +2 Science Program",
+    title: "Shaping Tomorrow's Scientists: The +2 Science Program",
     content: `
       The world is evolving faster than ever—thanks to breakthroughs in science and technology. St. Thomas Secondary English School offers a robust +2 Science program designed for curious minds passionate about discovery.
 
-      ### A Future-Focused Curriculum
+      A Future-Focused Curriculum
       Core subjects include Physics, Chemistry, Biology, Mathematics, and English, enriched with practical learning experiences.
 
-      ### Experienced Faculty
+      Experienced Faculty
       Highly qualified teachers mentor students through complex topics and practical sessions, ensuring academic depth.
 
-      ### State-of-the-Art Science Labs
+      State-of-the-Art Science Labs
       Well-equipped labs for Physics, Chemistry, and Biology allow hands-on experiments, fostering scientific thinking.
 
-      ### Competitive Exam Preparation
+      Competitive Exam Preparation
       Special classes, mock tests, and guest lectures prepare students for MBBS, Engineering, and other technical degrees.
 
-      ### Career Counseling
+      Career Counseling
       Academic counselors guide students toward careers in medicine, data science, or environmental research.
 
-      ### Extracurricular Opportunities
+      Extracurricular Opportunities
       Science exhibitions, robotics clubs, and research projects build leadership and presentation skills.
 
-      ### Alumni Success
-      Graduates are now doctors, engineers, and researchers, reflecting the program’s strength.
+      Alumni Success
+      Graduates are now doctors, engineers, and researchers, reflecting the program's strength.
 
-      ### Final Thoughts
+      Final Thoughts
       With expert faculty, hands-on labs, and personalized mentorship, the +2 Science program at St. Thomas is the ideal place for aspiring innovators.
     `,
     date: "2025-04-22",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/lab bio.jpg",
   },
   {
     id: 4,
@@ -126,34 +126,34 @@ const blogPosts = [
     content: `
       In the age of entrepreneurship and global finance, St. Thomas’s +2 Management stream prepares students for business and leadership roles.
 
-      ### Why Choose Management?
+      Why Choose Management?
       The program equips students with knowledge and skills for startups, corporate careers, or advanced degrees.
 
-      #### Core Subjects:
+      Core Subjects:
       - Business Studies
       - Accountancy
       - Economics
       - English
 
-      ### Learning Beyond Books
+      Learning Beyond Books
       Project-based learning includes business simulations, market surveys, and financial literacy programs.
 
-      ### Expert Faculty
+      Expert Faculty
       Qualified professionals with business experience provide practical insights and mentorship.
 
-      ### Digital Tools
+      Digital Tools
       Students use spreadsheets, business software, and learn e-commerce basics.
 
-      ### Career Readiness
+      Career Readiness
       Career counseling, CV workshops, and entrance exam prep ensure university and job readiness.
 
-      ### Business Clubs
+      Business Clubs
       Management clubs and entrepreneurship contests foster leadership and teamwork.
 
-      ### Alumni Success
+      Alumni Success
       Graduates are now Chartered Accountants, business administrators, and startup founders.
 
-      ### Final Thoughts
+      Final Thoughts
       The +2 Management stream offers academic rigor, practical training, and leadership development for future business leaders.
     `,
     date: "2025-04-21",
@@ -166,28 +166,28 @@ const blogPosts = [
     content: `
       Technology is the present, and St. Thomas’s +2 Computer Science program empowers students to become tech innovators.
 
-      ### Program Structure
+      Program Structure
       Modules cover programming, database systems, web technologies, and ICT applications.
 
-      ### Hands-On Coding
+      Hands-On Coding
       Students learn programming logic, software development, and build mini-projects from day one.
 
-      ### Modern Computer Lab
+      Modern Computer Lab
       High-performance computers, stable internet, and simulation tools support innovation.
 
-      ### Expert Faculty
+      Expert Faculty
       IT professionals provide clear guidance and project support.
 
-      ### Innovation Clubs
+      Innovation Clubs
       Coding, robotics, and cybersecurity clubs inspire creativity and competition.
 
-      ### Career Support
+      Career Support
       Guidance for IT programs, freelancing, and internships prepares students for tech careers.
 
-      ### Alumni Achievements
+      Alumni Achievements
       Graduates work in IT firms, launch startups, and pursue advanced degrees.
 
-      ### Final Thoughts
+      Final Thoughts
       The +2 Computer Science program offers top-tier instruction and hands-on coding for a powerful tech future.
     `,
     date: "2025-04-20",
@@ -201,34 +201,34 @@ const blogPosts = [
     content: `
       As tourism grows, St. Thomas’s +2 Hotel Management program prepares students for rewarding hospitality careers.
 
-      ### A Gateway to Hospitality
+      A Gateway to Hospitality
       The curriculum blends theory, practical skills, and soft-skill development.
 
-      #### Core Subjects:
+      Core Subjects:
       - Hotel Management
       - Accountancy
       - English
       - Business Studies
 
-      ### Practical Learning
+      Practical Learning
       Training includes food service, culinary basics, housekeeping, and front desk operations.
 
-      ### Professional Faculty
+      Professional Faculty
       Industry experts and guest mentors provide real-world insights.
 
-      ### Modern Facilities
+      Modern Facilities
       Training restaurant, culinary lab, and mock front office simulate hotel environments.
 
-      ### Soft Skills
+      Soft Skills
       Communication, grooming, and problem-solving are emphasized.
 
-      ### Internships
+      Internships
       Hotel visits and internships offer real-world exposure.
 
-      ### Career Pathways
+      Career Pathways
       Graduates pursue BHM or work in hotels, airlines, and tourism.
 
-      ### Final Thoughts
+      Final Thoughts
       The +2 Hotel Management program transforms students into confident, global hospitality professionals.
     `,
     date: "2025-04-19",
@@ -241,28 +241,28 @@ const blogPosts = [
     content: `
       Behind every successful student at St. Thomas is a dedicated faculty inspiring and mentoring them.
 
-      ### Experienced Educators
+      Experienced Educators
       Highly qualified teachers with advanced degrees teach specialized subjects.
 
-      ### Passion for Teaching
+      Passion for Teaching
       Faculty go beyond teaching, offering extra sessions and mentorship.
 
-      ### Modern Methods
+      Modern Methods
       Interactive learning, technology integration, and project-based teaching are standard.
 
-      ### Character Building
+      Character Building
       Teachers mentor students in ethics, time management, and leadership.
 
-      ### Parental Communication
+      Parental Communication
       Regular updates and open-door policies build trust.
 
-      ### Exam Support
+      Exam Support
       Faculty provide coaching, revisions, and strategies for board exams.
 
-      ### Faculty Growth
+      Faculty Growth
       Training programs and recognition ensure continuous improvement.
 
-      ### Final Thoughts
+      Final Thoughts
       The remarkable faculty at St. Thomas are the pillars of the school’s excellence.
     `,
     date: "2025-04-18",
@@ -275,28 +275,28 @@ const blogPosts = [
     content: `
       At St. Thomas, the learning environment promotes academic excellence and emotional well-being.
 
-      ### Calm Campus
+      Calm Campus
       A serene campus with green gardens and quiet study areas fosters focus.
 
-      ### Respectful Discipline
+      Respectful Discipline
       Discipline is rooted in mutual respect, with zero tolerance for bullying.
 
-      ### Culture of Care
+      Culture of Care
       A family-like atmosphere encourages kindness and support among students.
 
-      ### Mental Wellness
+      Mental Wellness
       Counseling, mindfulness, and teacher support ensure emotional health.
 
-      ### Growth Mindset
+      Growth Mindset
       Constructive feedback and risk-taking promote resilience.
 
-      ### Parental Involvement
+      Parental Involvement
       Regular updates and meetings create a unified support system.
 
-      ### Safety
+      Safety
       Secure gates, drills, and hygiene measures ensure peace of mind.
 
-      ### Final Thoughts
+      Final Thoughts
       St. Thomas offers a peaceful sanctuary for young minds to grow with confidence.
     `,
     date: "2025-04-17",
@@ -309,28 +309,28 @@ const blogPosts = [
     content: `
       At St. Thomas, success is reflected in the growth and achievements of its students.
 
-      ### National Exam Excellence
+      National Exam Excellence
       Students excel in SEE and NEB exams, ranking among top performers.
 
-      ### Scholarship Winners
+      Scholarship Winners
       Graduates earn scholarships to study in Nepal and abroad.
 
-      ### Science Innovators
+      Science Innovators
       Projects like water filtration models win national recognition.
 
-      ### Business Leaders
+      Business Leaders
       Management students launch startups and pursue BBAs globally.
 
-      ### Creative Achievements
+      Creative Achievements
       Dance, art, and public speaking talents shine in competitions.
 
-      ### Hospitality Careers
+      Hospitality Careers
       Hotel Management graduates work in luxury hotels and cruise lines.
 
-      ### Tech Innovators
+      Tech Innovators
       Computer Science students win hackathons and work as developers.
 
-      ### Final Thoughts
+      Final Thoughts
       St. Thomas students’ achievements prove the school builds futures, one dream at a time.
     `,
     date: "2025-04-16",
@@ -343,28 +343,28 @@ const blogPosts = [
     content: `
       Parents’ voices reflect the trust and satisfaction they have in St. Thomas.
 
-      ### A Second Home
+      A Second Home
       “The teachers are caring, and my daughter feels at home.” – Mrs. Reema Adhikari
 
-      ### Real Growth
+      Real Growth
       “My son became confident and independent.” – Mr. Ramchandra Poudel
 
-      ### Safe Environment
+      Safe Environment
       “We never worry about our son’s safety.” – Mrs. Pramila Yadav
 
-      ### True Mentors
+      True Mentors
       “Teachers guided my daughter to a scholarship.” – Mr. Dinesh Khadka
 
-      ### Transparent Communication
+      Transparent Communication
       “The school keeps us informed.” – Mrs. Anju Thapa
 
-      ### Future Preparation
+      Future Preparation
       “My son is ready for software engineering.” – Mr. Rajendra Shah
 
-      ### Support for Working Parents
+      Support for Working Parents
       “The school eases our responsibilities.” – Mrs. Sandhya Tamang
 
-      ### Final Thoughts
+      Final Thoughts
       Parents’ joy and trust prove St. Thomas is the right choice for families.
     `,
     date: "2025-04-15",
@@ -377,28 +377,28 @@ const blogPosts = [
     content: `
       Education is a journey, and St. Thomas offers a seamless path from pre-school to +2.
 
-      ### Pre-School
+      Pre-School
       Play-based learning builds foundational skills and curiosity.
 
-      ### Primary School
+      Primary School
       Structured curriculum blends academics with creativity.
 
-      ### Lower Secondary
+      Lower Secondary
       Deeper subject focus and critical thinking prepare for exams.
 
-      ### Secondary
+      Secondary
       Intensive SEE preparation ensures academic success.
 
-      ### Plus Two
+      Plus Two
       Specialized streams prepare students for university and careers.
 
-      ### Continuum Benefits
+      Continuum Benefits
       Consistency, strong bonds, and smooth transitions reduce stress.
 
-      ### Lifelong Connection
+      Lifelong Connection
       Alumni return to mentor and stay connected.
 
-      ### Final Thoughts
+      Final Thoughts
       St. Thomas’s complete academic path ensures growth and transformation.
     `,
     date: "2025-04-14",
@@ -411,28 +411,28 @@ const blogPosts = [
     content: `
       St. Thomas Secondary English School stands as the premier educational institution in Nepalgunj, blending academic excellence with holistic development.
 
-      ### Academic Excellence
+      Academic Excellence
       From pre-school to +2, St. Thomas offers a robust curriculum and exam success.
 
-      ### Specialized Streams
+      Specialized Streams
       Science, Management, Computer Science, and Hotel Management prepare students for diverse careers.
 
-      ### Exceptional Faculty
+      Exceptional Faculty
       Dedicated teachers mentor students with expertise and care.
 
-      ### Modern Facilities
+      Modern Facilities
       Science labs, computer labs, and hospitality training facilities enhance learning.
 
-      ### Supportive Environment
+      Supportive Environment
       A peaceful campus fosters emotional and academic growth.
 
-      ### Student Achievements
+      Student Achievements
       Top exam results, scholarships, and global careers highlight success.
 
-      ### Parental Trust
+      Parental Trust
       Transparent communication and care earn families’ trust.
 
-      ### Final Thoughts
+      Final Thoughts
       St. Thomas leads Nepalgunj’s education with vision, integrity, and a commitment to shaping futures.
     `,
     date: "2025-04-13",
