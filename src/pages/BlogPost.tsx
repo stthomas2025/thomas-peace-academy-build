@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
@@ -122,9 +123,9 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Empowering Tomorrow’s Leaders: The +2 Management Program",
+    title: "Empowering Tomorrow's Leaders: The +2 Management Program",
     content: `
-      In the age of entrepreneurship and global finance, St. Thomas’s +2 Management stream prepares students for business and leadership roles.
+      In the age of entrepreneurship and global finance, St. Thomas's +2 Management stream prepares students for business and leadership roles.
 
       Why Choose Management?
       The program equips students with knowledge and skills for startups, corporate careers, or advanced degrees.
@@ -158,13 +159,13 @@ const blogPosts = [
     `,
     date: "2025-04-21",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (28).jpg",
   },
   {
     id: 5,
     title: "Building the Digital Future: +2 Computer Science",
     content: `
-      Technology is the present, and St. Thomas’s +2 Computer Science program empowers students to become tech innovators.
+      Technology is the present, and St. Thomas's +2 Computer Science program empowers students to become tech innovators.
 
       Program Structure
       Modules cover programming, database systems, web technologies, and ICT applications.
@@ -192,14 +193,14 @@ const blogPosts = [
     `,
     date: "2025-04-20",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/computer lap.jpeg",
   },
   {
     id: 6,
     title:
       "Crafting Hospitality Professionals: The +2 Hotel Management Program",
     content: `
-      As tourism grows, St. Thomas’s +2 Hotel Management program prepares students for rewarding hospitality careers.
+      As tourism grows, St. Thomas's +2 Hotel Management program prepares students for rewarding hospitality careers.
 
       A Gateway to Hospitality
       The curriculum blends theory, practical skills, and soft-skill development.
@@ -233,7 +234,7 @@ const blogPosts = [
     `,
     date: "2025-04-19",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (32).jpg",
   },
   {
     id: 7,
@@ -263,11 +264,11 @@ const blogPosts = [
       Training programs and recognition ensure continuous improvement.
 
       Final Thoughts
-      The remarkable faculty at St. Thomas are the pillars of the school’s excellence.
+      The remarkable faculty at St. Thomas are the pillars of the school's excellence.
     `,
     date: "2025-04-18",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/faculty.jpg",
   },
   {
     id: 8,
@@ -301,7 +302,7 @@ const blogPosts = [
     `,
     date: "2025-04-17",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (37).jpg",
   },
   {
     id: 9,
@@ -331,45 +332,45 @@ const blogPosts = [
       Computer Science students win hackathons and work as developers.
 
       Final Thoughts
-      St. Thomas students’ achievements prove the school builds futures, one dream at a time.
+      St. Thomas students' achievements prove the school builds futures, one dream at a time.
     `,
     date: "2025-04-16",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (39).jpg",
   },
   {
     id: 10,
     title: "What Parents Say – Heartfelt Testimonials from Families",
     content: `
-      Parents’ voices reflect the trust and satisfaction they have in St. Thomas.
+      Parents' voices reflect the trust and satisfaction they have in St. Thomas.
 
       A Second Home
-      “The teachers are caring, and my daughter feels at home.” – Mrs. Reema Adhikari
+      "The teachers are caring, and my daughter feels at home." – Mrs. Reema Adhikari
 
       Real Growth
-      “My son became confident and independent.” – Mr. Ramchandra Poudel
+      "My son became confident and independent." – Mr. Ramchandra Poudel
 
       Safe Environment
-      “We never worry about our son’s safety.” – Mrs. Pramila Yadav
+      "We never worry about our son's safety." – Mrs. Pramila Yadav
 
       True Mentors
-      “Teachers guided my daughter to a scholarship.” – Mr. Dinesh Khadka
+      "Teachers guided my daughter to a scholarship." – Mr. Dinesh Khadka
 
       Transparent Communication
-      “The school keeps us informed.” – Mrs. Anju Thapa
+      "The school keeps us informed." – Mrs. Anju Thapa
 
       Future Preparation
-      “My son is ready for software engineering.” – Mr. Rajendra Shah
+      "My son is ready for software engineering." – Mr. Rajendra Shah
 
       Support for Working Parents
-      “The school eases our responsibilities.” – Mrs. Sandhya Tamang
+      "The school eases our responsibilities." – Mrs. Sandhya Tamang
 
       Final Thoughts
-      Parents’ joy and trust prove St. Thomas is the right choice for families.
+      Parents' joy and trust prove St. Thomas is the right choice for families.
     `,
     date: "2025-04-15",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (4).jpg",
   },
   {
     id: 11,
@@ -399,11 +400,11 @@ const blogPosts = [
       Alumni return to mentor and stay connected.
 
       Final Thoughts
-      St. Thomas’s complete academic path ensures growth and transformation.
+      St. Thomas's complete academic path ensures growth and transformation.
     `,
     date: "2025-04-14",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/pre school/founder (13).jpg",
   },
   {
     id: 12,
@@ -430,14 +431,14 @@ const blogPosts = [
       Top exam results, scholarships, and global careers highlight success.
 
       Parental Trust
-      Transparent communication and care earn families’ trust.
+      Transparent communication and care earn families' trust.
 
       Final Thoughts
-      St. Thomas leads Nepalgunj’s education with vision, integrity, and a commitment to shaping futures.
+      St. Thomas leads Nepalgunj's education with vision, integrity, and a commitment to shaping futures.
     `,
     date: "2025-04-13",
     author: "St. Thomas Editorial Team",
-    image: "/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png",
+    image: "/lovable-uploads/high school/founder (21).jpg",
   },
 ];
 
