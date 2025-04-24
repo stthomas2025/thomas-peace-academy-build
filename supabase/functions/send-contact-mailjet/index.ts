@@ -23,6 +23,11 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
   console.log("Sending email with Mailjet");
   const url = "https://api.mailjet.com/v3.1/send";
 
+  if (!MAILJET_API_KEY || !MAILJET_SECRET_KEY) {
+    console.error("Mailjet API keys are missing!");
+    throw new Error("Missing API credentials. Please check your environment variables.");
+  }
+
   const requestBody = {
     Messages: [
       {
@@ -50,10 +55,14 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
   console.log("Request body:", JSON.stringify(requestBody));
   
   try {
+    // Use basic auth with the API key and secret key
+    const authString = btoa(`${MAILJET_API_KEY}:${MAILJET_SECRET_KEY}`);
+    
+    console.log("Making API request to Mailjet...");
     const response = await fetch(url, {
       method: "POST",
       headers: {
-        "Authorization": "Basic " + btoa(`${MAILJET_API_KEY}:${MAILJET_SECRET_KEY}`),
+        "Authorization": `Basic ${authString}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(requestBody),
@@ -63,6 +72,10 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
     console.log("Mailjet API response status:", response.status);
     console.log("Mailjet API response:", JSON.stringify(responseData));
     
+    if (!response.ok) {
+      throw new Error(`Mailjet API error: ${response.status} - ${JSON.stringify(responseData)}`);
+    }
+    
     return { status: response.status, data: responseData };
   } catch (error) {
     console.error("Error in Mailjet API call:", error);
@@ -71,7 +84,7 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
 };
 
 serve(async (req: Request): Promise<Response> => {
-  console.log("Received request:", req.method);
+  console.log("Received request:", req.method, req.url);
   
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -85,7 +98,23 @@ serve(async (req: Request): Promise<Response> => {
   }
 
   try {
-    const data: ContactSubmission = await req.json();
+    const requestText = await req.text();
+    console.log("Raw request body:", requestText);
+    
+    let data: ContactSubmission;
+    try {
+      data = JSON.parse(requestText);
+    } catch (parseError) {
+      console.error("Error parsing JSON:", parseError);
+      return new Response(
+        JSON.stringify({ error: "Invalid JSON in request body" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+    
     console.log("Received form data:", data);
     
     if (!data.name || !data.email || !data.message) {
@@ -100,12 +129,20 @@ serve(async (req: Request): Promise<Response> => {
     }
     
     // Send email via Mailjet
-    const emailResult = await sendMailjetEmail(data);
-
-    return new Response(
-      JSON.stringify({ success: true, mailjet: emailResult }),
-      { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
-    );
+    try {
+      const emailResult = await sendMailjetEmail(data);
+      
+      return new Response(
+        JSON.stringify({ success: true, mailjet: emailResult }),
+        { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    } catch (emailError: any) {
+      console.error("Error sending email:", emailError);
+      return new Response(
+        JSON.stringify({ error: `Failed to send email: ${emailError.message}` }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
   } catch (error: any) {
     console.error("Error processing request:", error);
     return new Response(
