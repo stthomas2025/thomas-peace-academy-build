@@ -6,6 +6,7 @@ import * as z from "zod";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useNavigate } from "react-router-dom";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -24,22 +25,23 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
-  studentName: z.string().min(2, {
+  student_name: z.string().min(2, {
     message: "Student name must be at least 2 characters.",
   }),
-  dateOfBirth: z.string({
+  date_of_birth: z.string({
     required_error: "Date of birth is required.",
   }),
   gender: z.enum(["male", "female", "other"], {
     required_error: "Please select a gender.",
   }),
-  applyingFor: z.string({
+  applying_for: z.string({
     required_error: "Please select a class level.",
   }),
-  previousSchool: z.string().optional(),
-  parentName: z.string().min(2, {
+  previous_school: z.string().optional(),
+  parent_name: z.string().min(2, {
     message: "Parent name must be at least 2 characters.",
   }),
   email: z.string().email({
@@ -51,30 +53,31 @@ const formSchema = z.object({
   address: z.string().min(5, {
     message: "Address must be at least 5 characters.",
   }),
-  emergencyContact: z.string().min(10, {
+  emergency_contact: z.string().min(10, {
     message: "Emergency contact number must be at least 10 digits.",
   }),
-  healthConditions: z.string().optional(),
-  additionalInfo: z.string().optional(),
+  health_conditions: z.string().optional(),
+  additional_info: z.string().optional(),
 });
 
 const Apply = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      studentName: "",
+      student_name: "",
       gender: undefined,
-      previousSchool: "",
-      parentName: "",
+      previous_school: "",
+      parent_name: "",
       email: "",
       phone: "",
       address: "",
-      emergencyContact: "",
-      healthConditions: "",
-      additionalInfo: "",
+      emergency_contact: "",
+      health_conditions: "",
+      additional_info: "",
     },
   });
 
@@ -84,6 +87,7 @@ const Apply = () => {
       console.log("Submitting application form:", values);
       
       // Insert data into the application_submissions table
+      // Note: The field names in values now match exactly with the database columns
       const { error } = await supabase
         .from('application_submissions')
         .insert(values);
@@ -102,15 +106,17 @@ const Apply = () => {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              name: values.parentName,
+              name: values.parent_name,
               email: values.email,
-              subject: `New Application: ${values.studentName} for ${values.applyingFor}`,
-              message: `New application received for student ${values.studentName}. Parent/Guardian: ${values.parentName}. Contact: ${values.phone}.`,
+              subject: `New Application: ${values.student_name} for ${values.applying_for}`,
+              message: `New application received for student ${values.student_name}. Parent/Guardian: ${values.parent_name}. Contact: ${values.phone}.`,
             }),
           }
         );
         
         console.log("Email notification status:", res.status);
+        const responseData = await res.json();
+        console.log("Email notification response:", responseData);
       } catch (emailErr) {
         // Don't fail the whole submission just because email failed
         console.error("Email notification failed:", emailErr);
@@ -121,6 +127,11 @@ const Apply = () => {
         description: "Thank you for applying to St. Thomas Secondary School. We will contact you shortly.",
       });
       form.reset();
+      
+      // Redirect to home page after successful submission
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
       
     } catch (err: any) {
       console.error("Submission error:", err);
@@ -164,7 +175,7 @@ const Apply = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}
-                          name="studentName"
+                          name="student_name"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Student Full Name</FormLabel>
@@ -178,7 +189,7 @@ const Apply = () => {
                         
                         <FormField
                           control={form.control}
-                          name="dateOfBirth"
+                          name="date_of_birth"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Date of Birth</FormLabel>
@@ -235,7 +246,7 @@ const Apply = () => {
                         
                         <FormField
                           control={form.control}
-                          name="applyingFor"
+                          name="applying_for"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Applying For</FormLabel>
@@ -260,7 +271,7 @@ const Apply = () => {
                         
                         <FormField
                           control={form.control}
-                          name="previousSchool"
+                          name="previous_school"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Previous School (if applicable)</FormLabel>
@@ -279,7 +290,7 @@ const Apply = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField
                           control={form.control}
-                          name="parentName"
+                          name="parent_name"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Parent/Guardian Name</FormLabel>
@@ -335,7 +346,7 @@ const Apply = () => {
                         
                         <FormField
                           control={form.control}
-                          name="emergencyContact"
+                          name="emergency_contact"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Emergency Contact Number</FormLabel>
@@ -354,7 +365,7 @@ const Apply = () => {
                       <div className="grid grid-cols-1 gap-6">
                         <FormField
                           control={form.control}
-                          name="healthConditions"
+                          name="health_conditions"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Health Conditions (if any)</FormLabel>
@@ -371,7 +382,7 @@ const Apply = () => {
                         
                         <FormField
                           control={form.control}
-                          name="additionalInfo"
+                          name="additional_info"
                           render={({ field }) => (
                             <FormItem>
                               <FormLabel>Any Additional Information</FormLabel>

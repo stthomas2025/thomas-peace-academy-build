@@ -47,6 +47,7 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
   console.log(`API Key available: ${!!MAILJET_API_KEY}`);
   console.log(`Secret Key available: ${!!MAILJET_SECRET_KEY}`);
   console.log("Sending to:", SEND_TO);
+  console.log("Request body:", JSON.stringify(requestBody));
   
   try {
     const response = await fetch(url, {
@@ -60,7 +61,7 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
     
     const responseData = await response.json();
     console.log("Mailjet API response status:", response.status);
-    console.log("Mailjet API response:", responseData);
+    console.log("Mailjet API response:", JSON.stringify(responseData));
     
     return { status: response.status, data: responseData };
   } catch (error) {
