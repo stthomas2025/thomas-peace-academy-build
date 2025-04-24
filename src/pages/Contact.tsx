@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -28,6 +27,8 @@ const Contact = () => {
     };
 
     try {
+      console.log("Submitting form data:", data);
+      
       // First, store the submission in Supabase
       const { error: supabaseError } = await supabase
         .from('contact_submissions')
@@ -38,7 +39,9 @@ const Contact = () => {
         throw new Error(supabaseError.message || "Error saving submission");
       }
 
-      // Then, send the email via Mailjet edge function
+      console.log("Successfully stored in database, sending email...");
+
+      // Then, send the email via Mailjet edge function with full URL
       const res = await fetch(
         "https://yumsqjykylhspozmfoza.functions.supabase.co/send-contact-mailjet",
         {
@@ -47,7 +50,10 @@ const Contact = () => {
           body: JSON.stringify(data),
         }
       );
+      
+      console.log("Email API response status:", res.status);
       const json = await res.json();
+      console.log("Email API response:", json);
       
       if (!res.ok) throw new Error(json.error || "Error sending email.");
       
@@ -59,6 +65,7 @@ const Contact = () => {
         duration: 5000,
       });
     } catch (err: any) {
+      console.error("Form submission error:", err);
       setFormError(err.message || "Unknown error.");
       toast({
         variant: "destructive",

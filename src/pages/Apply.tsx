@@ -1,10 +1,11 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -59,6 +60,7 @@ const formSchema = z.object({
 
 const Apply = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -76,13 +78,60 @@ const Apply = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Application Submitted",
-      description: "Thank you for applying to St. Thomas Secondary School. We will contact you shortly.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      setIsSubmitting(true);
+      console.log("Submitting application form:", values);
+      
+      // Insert data into the application_submissions table
+      const { error } = await supabase
+        .from('application_submissions')
+        .insert(values);
+      
+      if (error) {
+        console.error("Supabase error:", error);
+        throw new Error("Failed to submit application. " + error.message);
+      }
+
+      // Try to send email notification about the application
+      try {
+        // Send email notification via Mailjet edge function
+        const res = await fetch(
+          "https://yumsqjykylhspozmfoza.functions.supabase.co/send-contact-mailjet",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: values.parentName,
+              email: values.email,
+              subject: `New Application: ${values.studentName} for ${values.applyingFor}`,
+              message: `New application received for student ${values.studentName}. Parent/Guardian: ${values.parentName}. Contact: ${values.phone}.`,
+            }),
+          }
+        );
+        
+        console.log("Email notification status:", res.status);
+      } catch (emailErr) {
+        // Don't fail the whole submission just because email failed
+        console.error("Email notification failed:", emailErr);
+      }
+      
+      toast({
+        title: "Application Submitted",
+        description: "Thank you for applying to St. Thomas Secondary School. We will contact you shortly.",
+      });
+      form.reset();
+      
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      toast({
+        variant: "destructive",
+        title: "Submission Failed",
+        description: err.message || "Failed to submit application. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -349,8 +398,13 @@ const Apply = () => {
                       </div>
                     </div>
                     
-                    <Button type="submit" className="w-full md:w-auto bg-school-primary hover:bg-school-primary/90">
-                      Submit Application <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="w-full md:w-auto bg-school-primary hover:bg-school-primary/90"
+                    >
+                      {isSubmitting ? "Submitting..." : "Submit Application"} 
+                      {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
                     </Button>
                   </form>
                 </Form>
@@ -361,7 +415,7 @@ const Apply = () => {
               <p className="text-gray-600 mb-4">
                 For any queries regarding the admission process, please contact us:
               </p>
-              <p className="font-medium">081-521423 | nileshshrestha19@gmail.com</p>
+              <p className="font-medium">081-521423 | schoolstthoms@gmail.com</p>
             </div>
           </div>
         </div>

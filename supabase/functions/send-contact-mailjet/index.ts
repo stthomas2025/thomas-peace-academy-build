@@ -17,9 +17,10 @@ interface ContactSubmission {
 
 const MAILJET_API_KEY = Deno.env.get("MAILJET_API_KEY");
 const MAILJET_SECRET_KEY = Deno.env.get("MAILJET_SECRET_KEY");
-const SEND_TO = "schoolstthoms@gmail.com"; // Update to your desired recipient
+const SEND_TO = "schoolstthoms@gmail.com"; // School email
 
 const sendMailjetEmail = async (contact: ContactSubmission) => {
+  console.log("Sending email with Mailjet");
   const url = "https://api.mailjet.com/v3.1/send";
 
   const requestBody = {
@@ -42,43 +43,70 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
     ],
   };
 
-  const response = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Authorization": "Basic " + btoa(MAILJET_API_KEY + ":" + MAILJET_SECRET_KEY),
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(requestBody),
-  });
-
-  return response;
+  // Log auth and request details
+  console.log(`API Key available: ${!!MAILJET_API_KEY}`);
+  console.log(`Secret Key available: ${!!MAILJET_SECRET_KEY}`);
+  console.log("Sending to:", SEND_TO);
+  
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Authorization": "Basic " + btoa(`${MAILJET_API_KEY}:${MAILJET_SECRET_KEY}`),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
+    });
+    
+    const responseData = await response.json();
+    console.log("Mailjet API response status:", response.status);
+    console.log("Mailjet API response:", responseData);
+    
+    return { status: response.status, data: responseData };
+  } catch (error) {
+    console.error("Error in Mailjet API call:", error);
+    throw error;
+  }
 };
 
-serve(async (req) => {
+serve(async (req: Request): Promise<Response> => {
+  console.log("Received request:", req.method);
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
+    console.log("Handling OPTIONS request");
     return new Response(null, { headers: corsHeaders });
   }
 
   if (req.method !== "POST") {
+    console.log("Method not allowed:", req.method);
     return new Response("Method Not Allowed", { status: 405, headers: corsHeaders });
   }
 
   try {
     const data: ContactSubmission = await req.json();
-    // Attempt to send email via Mailjet
-    const emailRes = await sendMailjetEmail(data);
-    const emailResult = await emailRes.json();
-
-    // Log the result
-    console.log("Mailjet response:", emailResult);
+    console.log("Received form data:", data);
+    
+    if (!data.name || !data.email || !data.message) {
+      console.log("Missing required fields");
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+    
+    // Send email via Mailjet
+    const emailResult = await sendMailjetEmail(data);
 
     return new Response(
-      JSON.stringify({ ok: true, mailjet: emailResult }),
+      JSON.stringify({ success: true, mailjet: emailResult }),
       { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
-  } catch (error) {
-    console.error("Mailjet error:", error);
+  } catch (error: any) {
+    console.error("Error processing request:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
       { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
