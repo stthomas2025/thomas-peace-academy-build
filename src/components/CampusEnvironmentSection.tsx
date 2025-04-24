@@ -1,14 +1,14 @@
-
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CampusEnvironmentSection = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
@@ -17,25 +17,31 @@ const CampusEnvironmentSection = () => {
   const features = [
     {
       title: "Beautiful Campus",
-      description: "Our campus features a modern infrastructure with specialized labs and lush green surroundings.",
-      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
+      description:
+        "Our campus features a modern infrastructure with specialized labs and lush green surroundings.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png",
     },
     {
       title: "Clean Air & Greenery",
-      description: "The abundance of trees and well-maintained gardens ensure a fresh and pleasant environment.",
-      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
+      description:
+        "The abundance of trees and well-maintained gardens ensure a fresh and pleasant environment.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png",
     },
     {
       title: "State-of-the-Art Facilities",
-      description: "Modern classrooms, computer labs, science labs, and specialized learning spaces.",
-      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png"
-    }
+      description:
+        "Modern classrooms, computer labs, science labs, and specialized learning spaces.",
+      image: "/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png",
+    },
   ];
 
   return (
-    <section className="py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50 relative" ref={sectionRef}>
+    <section
+      className="py-20 overflow-hidden bg-gradient-to-b from-white to-gray-50 relative"
+      ref={sectionRef}
+    >
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -47,40 +53,49 @@ const CampusEnvironmentSection = () => {
             A Peaceful Environment for Learning
           </h2>
           <p className="text-gray-600 text-lg">
-            At St. Thomas, we believe that a serene and inspiring environment is essential for effective learning and holistic development.
+            At St. Thomas, we believe that a serene and inspiring environment is
+            essential for effective learning and holistic development.
           </p>
         </motion.div>
 
         <div className="relative h-[500px] mb-20 rounded-2xl overflow-hidden">
-          <motion.div 
-            style={{ y, opacity }} 
+          <motion.div
+            style={{ y, opacity }}
             className="absolute inset-0 bg-cover bg-center"
             initial={{ scale: 1.1 }}
             whileInView={{ scale: 1 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
           >
-            <div 
+            <div
               className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')" }}
+              style={{
+                backgroundImage:
+                  "url('/lovable-uploads/919f8a27-51c6-40ec-a2bf-174699194643.png')",
+              }}
             ></div>
             <div className="absolute inset-0 bg-black/30"></div>
           </motion.div>
-          
+
           <div className="absolute inset-0 flex items-center justify-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
               className="text-center text-white px-4 max-w-3xl"
             >
-              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-4">Experience the Perfect Learning Environment</h3>
+              <h3 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+                Experience the Perfect Learning Environment
+              </h3>
               <p className="text-xl text-white/90 mb-6">
-                Our campus offers a unique blend of natural beauty and modern facilities, creating an inspiring atmosphere for academic excellence.
+                Our campus offers a unique blend of natural beauty and modern
+                facilities, creating an inspiring atmosphere for academic
+                excellence.
               </p>
               <Button className="bg-school-garden hover:bg-school-garden/90 text-white">
-                Schedule a Campus Tour <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to="/contact"> Schedule a Visit</Link>{" "}
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
           </div>
@@ -88,7 +103,7 @@ const CampusEnvironmentSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {features.map((feature, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -97,21 +112,23 @@ const CampusEnvironmentSection = () => {
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
             >
               <div className="h-56 overflow-hidden">
-                <img 
-                  src={feature.image} 
-                  alt={feature.title} 
+                <img
+                  src={feature.image}
+                  alt={feature.title}
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-school-dark mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-school-dark mb-3">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -119,24 +136,32 @@ const CampusEnvironmentSection = () => {
           className="bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100 max-w-4xl mx-auto"
         >
           <div className="flex flex-col items-center text-center">
-            <svg className="h-12 w-12 text-school-primary/30 mb-6" fill="currentColor" viewBox="0 0 32 32">
+            <svg
+              className="h-12 w-12 text-school-primary/30 mb-6"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
               <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
             </svg>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 italic mb-8">
-              "The peaceful campus environment at St. Thomas Secondary School provides an ideal atmosphere for learning. 
-              The beautiful gardens and green spaces create a sense of tranquility that helps students focus and excel in their studies."
+              "The peaceful campus environment at St. Thomas English Secondary
+              School provides an ideal atmosphere for learning. The beautiful
+              gardens and green spaces create a sense of tranquility that helps
+              students focus and excel in their studies."
             </p>
-            
+
             <div>
-              <h4 className="font-bold text-school-dark text-lg">Parent of Class X Student</h4>
+              <h4 className="font-bold text-school-dark text-lg">
+                Parent of Class X Student
+              </h4>
               <p className="text-gray-500">5 years with St. Thomas</p>
             </div>
           </div>
         </motion.div>
 
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -146,8 +171,8 @@ const CampusEnvironmentSection = () => {
             <h3 className="text-4xl font-bold text-school-garden mb-2">10+</h3>
             <p className="text-gray-700">Acres of Green Campus</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -157,8 +182,8 @@ const CampusEnvironmentSection = () => {
             <h3 className="text-4xl font-bold text-school-garden mb-2">500+</h3>
             <p className="text-gray-700">Varieties of Plants & Flowers</p>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}

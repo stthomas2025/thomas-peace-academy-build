@@ -11,7 +11,7 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      title: "Welcome to St. Thomas Secondary School",
+      title: "Welcome to St. Thomas English Secondary School",
       subtitle: "Providing Quality Education Since Establishment",
       description: "A premier educational institution offering classes from Nursery to XII in a peaceful and nurturing environment.",
       cta: "Apply Now",

@@ -29,7 +29,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-serif font-bold text-white mb-6"
           >
-            Begin Your Journey with St. Thomas Secondary School
+            Begin Your Journey with St. Thomas English Secondary School
           </motion.h2>
           
           <motion.p 

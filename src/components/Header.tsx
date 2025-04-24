@@ -87,7 +87,7 @@ const Header = () => {
                 St. Thomas
               </h1>
               <p className="text-xs md:text-sm text-school-secondary font-medium">
-                Secondary School & College
+                English Secondary School 
               </p>
             </div>
           </Link>
