@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -70,6 +69,7 @@ const Apply = () => {
     defaultValues: {
       student_name: "",
       gender: undefined,
+      applying_for: "",
       previous_school: "",
       parent_name: "",
       email: "",
@@ -86,20 +86,31 @@ const Apply = () => {
       setIsSubmitting(true);
       console.log("Submitting application form:", values);
       
-      // Insert data into the application_submissions table
-      // Note: The field names in values now match exactly with the database columns
+      const submissionData = {
+        student_name: values.student_name,
+        date_of_birth: values.date_of_birth,
+        gender: values.gender,
+        applying_for: values.applying_for,
+        previous_school: values.previous_school || null,
+        parent_name: values.parent_name,
+        email: values.email,
+        phone: values.phone,
+        address: values.address,
+        emergency_contact: values.emergency_contact,
+        health_conditions: values.health_conditions || null,
+        additional_info: values.additional_info || null,
+      };
+      
       const { error } = await supabase
         .from('application_submissions')
-        .insert(values);
+        .insert(submissionData);
       
       if (error) {
         console.error("Supabase error:", error);
         throw new Error("Failed to submit application. " + error.message);
       }
 
-      // Try to send email notification about the application
       try {
-        // Send email notification via Mailjet edge function
         const res = await fetch(
           "https://yumsqjykylhspozmfoza.functions.supabase.co/send-contact-mailjet",
           {
@@ -108,6 +119,7 @@ const Apply = () => {
             body: JSON.stringify({
               name: values.parent_name,
               email: values.email,
+              phone: values.phone,
               subject: `New Application: ${values.student_name} for ${values.applying_for}`,
               message: `New application received for student ${values.student_name}. Parent/Guardian: ${values.parent_name}. Contact: ${values.phone}.`,
             }),
@@ -118,7 +130,6 @@ const Apply = () => {
         const responseData = await res.json();
         console.log("Email notification response:", responseData);
       } catch (emailErr) {
-        // Don't fail the whole submission just because email failed
         console.error("Email notification failed:", emailErr);
       }
       
@@ -128,7 +139,6 @@ const Apply = () => {
       });
       form.reset();
       
-      // Redirect to home page after successful submission
       setTimeout(() => {
         navigate("/");
       }, 2000);
