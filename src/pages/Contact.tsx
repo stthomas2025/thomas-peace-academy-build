@@ -81,17 +81,24 @@ const Contact = () => {
   return (
     <div className="min-h-screen font-sans">
       <Header />
-      
+
       {/* Page Banner */}
       <div className="relative pt-32 pb-20 bg-gray-50">
-        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')" }}></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-10"
+          style={{
+            backgroundImage:
+              "url('/lovable-uploads/ee7faf30-f2e5-4db9-8793-45de8d71982c.png')",
+          }}
+        ></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4 text-school-dark">
               Contact Us
             </h1>
             <p className="text-xl text-gray-600">
-              Get in touch with St. Thomas English Secondary School for admissions, inquiries, or feedback.
+              Get in touch with St. Thomas English Secondary School for
+              admissions, inquiries, or feedback.
             </p>
             <p className="mt-2 text-gray-600 text-lg font-medium">
               Established: 1990 (2047 BS)
@@ -99,20 +106,22 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Contact Information */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h2 className="text-2xl font-serif font-bold text-school-dark mb-6">Send Us a Message</h2>
+              <h2 className="text-2xl font-serif font-bold text-school-dark mb-6">
+                Send Us a Message
+              </h2>
               <form onSubmit={handleContactSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -142,7 +151,7 @@ const Contact = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="mb-6">
                   <label className="block text-gray-700 mb-2" htmlFor="phone">
                     Phone Number
@@ -155,7 +164,7 @@ const Contact = () => {
                     placeholder="+977 XXXXXXXXXX"
                   />
                 </div>
-                
+
                 <div className="mb-6">
                   <label className="block text-gray-700 mb-2" htmlFor="subject">
                     Subject
@@ -168,7 +177,7 @@ const Contact = () => {
                     placeholder="Admission Inquiry"
                   />
                 </div>
-                
+
                 <div className="mb-6">
                   <label className="block text-gray-700 mb-2" htmlFor="message">
                     Your Message
@@ -201,15 +210,17 @@ const Contact = () => {
                 )}
               </form>
             </motion.div>
-            
+
             {/* Contact Info & Map */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-2xl font-serif font-bold text-school-dark mb-6">Contact Information</h2>
+              <h2 className="text-2xl font-serif font-bold text-school-dark mb-6">
+                Contact Information
+              </h2>
               <div className="bg-gray-50 p-6 rounded-xl mb-8">
                 <div className="space-y-6">
                   <div className="flex items-start">
@@ -223,7 +234,7 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="w-12 h-12 rounded-full bg-school-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <Phone className="h-6 w-6 text-school-primary" />
@@ -235,7 +246,7 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="w-12 h-12 rounded-full bg-school-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <Mail className="h-6 w-6 text-school-primary" />
@@ -245,37 +256,41 @@ const Contact = () => {
                       <p className="text-gray-600">schoolstthoms@gmail.com</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="w-12 h-12 rounded-full bg-school-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                       <Clock className="h-6 w-6 text-school-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-800 mb-1">Office Hours</h3>
-                      <p className="text-gray-600">Monday to Friday: 7:00 AM - 4:00 PM</p>
-                      <p className="text-gray-600">Saturday: 7:00 AM - 12:00 PM</p>
-                      <p className="text-gray-600">Sunday: Closed</p>
+                      <h3 className="font-bold text-gray-800 mb-1">
+                        Office Hours
+                      </h3>
+                      <p className="text-gray-600">
+                        Sunday to Friday: 7:00 AM - 4:00 PM
+                      </p>
+                      <p className="text-gray-600">Saturday: Closed</p>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <div className="rounded-xl overflow-hidden h-[300px] shadow-lg">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.5686465095426!2d81.6216!3d28.0473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399a33e85dc6b885%3A0x8e47ee1a30713c8c!2sNepalgunj%2C%20Nepal!5e0!3m2!1sen!2sus!4v1625014589842!5m2!1sen!2sus" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={true} 
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3520.4083090293616!2d81.61693187548047!3d28.073085675974802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3998673c2140c043%3A0x9a8b848748480058!2sSt.%20Thomas%20Secondary%20School!5e0!3m2!1sen!2snp!4v1745564949272!5m2!1sen!2snp"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
                   title="St. Thomas Secondary School Location"
-                ></iframe>
+                />
               </div>
             </motion.div>
           </div>
         </div>
       </section>
-      
+
       {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -284,31 +299,36 @@ const Contact = () => {
               Frequently Asked Questions
             </h2>
             <p className="text-gray-600">
-              Find answers to common questions about St. Thomas Secondary School.
+              Find answers to common questions about St. Thomas Secondary
+              School.
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
                 {
                   question: "What are the school's operating hours?",
-                  answer: "The school operates from Monday to Friday, 7:00 AM to 4:00 PM, and Saturday from 7:00 AM to 12:00 PM. The administrative office is open during the same hours."
+                  answer:
+                    "The school operates from Monday to Friday, 7:00 AM to 4:00 PM, and Saturday from 7:00 AM to 12:00 PM. The administrative office is open during the same hours.",
                 },
                 {
                   question: "How can I apply for admission?",
-                  answer: "Admission applications can be submitted online through our website or in person at the school office. Please check the Admissions page for detailed information about the admission process, required documents, and important dates."
+                  answer:
+                    "Admission applications can be submitted online through our website or in person at the school office. Please check the Admissions page for detailed information about the admission process, required documents, and important dates.",
                 },
                 {
                   question: "Do you provide transportation services?",
-                  answer: "Yes, we provide transportation services to various areas in and around Nepalganj. Transportation routes and fees can be obtained from the school office or by contacting us directly."
+                  answer:
+                    "Yes, we provide transportation services to various areas in and around Nepalganj. Transportation routes and fees can be obtained from the school office or by contacting us directly.",
                 },
                 {
                   question: "What extracurricular activities do you offer?",
-                  answer: "We offer a wide range of extracurricular activities including sports, music, dance, art, debate, and various clubs. These activities are designed to promote holistic development of our students."
-                }
+                  answer:
+                    "We offer a wide range of extracurricular activities including sports, music, dance, art, debate, and various clubs. These activities are designed to promote holistic development of our students.",
+                },
               ].map((faq, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -316,7 +336,9 @@ const Contact = () => {
                   viewport={{ once: true }}
                   className="bg-white p-6 rounded-xl shadow-md"
                 >
-                  <h3 className="text-xl font-bold text-school-dark mb-3">{faq.question}</h3>
+                  <h3 className="text-xl font-bold text-school-dark mb-3">
+                    {faq.question}
+                  </h3>
                   <p className="text-gray-600">{faq.answer}</p>
                 </motion.div>
               ))}
@@ -324,7 +346,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

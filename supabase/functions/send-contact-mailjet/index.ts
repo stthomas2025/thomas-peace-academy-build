@@ -32,7 +32,7 @@ const sendMailjetEmail = async (contact: ContactSubmission) => {
     Messages: [
       {
         From: {
-          Email: "no-reply@school.com",
+          Email: "nlbt2021@gmail.com",
           Name: "St. Thomas School Form",
         },
         To: [
