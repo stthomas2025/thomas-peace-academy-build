@@ -17,7 +17,7 @@ interface ContactSubmission {
 
 const MAILJET_API_KEY = Deno.env.get("MAILJET_API_KEY");
 const MAILJET_SECRET_KEY = Deno.env.get("MAILJET_SECRET_KEY");
-const SEND_TO = "schoolstthoms@gmail.com"; // School email
+const SEND_TO = "nlbt3000@gmail.com"; // School email
 
 const sendMailjetEmail = async (contact: ContactSubmission) => {
   console.log("Sending email with Mailjet");
