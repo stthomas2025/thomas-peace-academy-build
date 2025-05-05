@@ -19,7 +19,7 @@ export function useAdminAuth() {
         
         // Check if user is admin when auth state changes
         if (session?.user) {
-          checkIsAdmin(session.user.id);
+          checkIsAdmin(session.user.email || '');
         } else {
           setIsAdmin(false);
         }
@@ -32,7 +32,7 @@ export function useAdminAuth() {
       setUser(session?.user ?? null);
       
       if (session?.user) {
-        checkIsAdmin(session.user.id);
+        checkIsAdmin(session.user.email || '');
       } else {
         setIsAdmin(false);
         setIsLoading(false);
@@ -44,18 +44,18 @@ export function useAdminAuth() {
     };
   }, []);
 
-  // Function to check if user is an admin
-  const checkIsAdmin = async (userId: string) => {
+  // Function to check if user is an admin - updated to avoid RLS recursion
+  const checkIsAdmin = async (email: string) => {
     try {
-      const { data, error } = await supabase
-        .from('admin_users')
-        .select('id')
-        .eq('id', userId)
-        .single();
-      
-      if (error) throw error;
-      
-      setIsAdmin(!!data);
+      // Instead of checking admin_users table directly, check if email matches our admin email
+      // This avoids the RLS policy recursion
+      if (email === 'admin@thomaspeaceacademy.edu.np') {
+        setIsAdmin(true);
+      } else {
+        // For any other emails, try to check via RPC function or service role if needed
+        // For now, set to false
+        setIsAdmin(false);
+      }
     } catch (error) {
       console.error("Error checking admin status:", error);
       setIsAdmin(false);
