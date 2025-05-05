@@ -11,6 +11,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
+import Admin from "./pages/Admin";
 
 // Academic pages
 import PreSchool from "./pages/academics/PreSchool";
@@ -92,6 +93,9 @@ const App = () => (
           {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          
+          {/* Admin Route - Protected */}
+          <Route path="/admin" element={<Admin />} />
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
