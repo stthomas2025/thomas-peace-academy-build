@@ -1,10 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
-import Tabs from "@/components/ui/tabs";
-import TabsContent from "@/components/ui/tabs";
-import TabsList from "@/components/ui/tabs";
-import TabsTrigger from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ContactSubmissionsTable from "./ContactSubmissionsTable";
 import ApplicationSubmissionsTable from "./ApplicationSubmissionsTable";
 import AdminHeader from "./AdminHeader";
