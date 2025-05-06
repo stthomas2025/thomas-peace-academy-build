@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { 
@@ -27,7 +26,11 @@ interface ContactSubmission {
   status: string;
 }
 
-const ContactSubmissionsTable = () => {
+interface ContactSubmissionsTableProps {
+  onError?: (error: string) => void;
+}
+
+const ContactSubmissionsTable = ({ onError }: ContactSubmissionsTableProps) => {
   const [submissions, setSubmissions] = useState<ContactSubmission[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,6 +56,7 @@ const ContactSubmissionsTable = () => {
         title: "Error fetching submissions",
         description: error.message || "Failed to fetch contact submissions"
       });
+      if (onError) onError(error.message || "Failed to fetch contact submissions");
     } finally {
       setLoading(false);
     }

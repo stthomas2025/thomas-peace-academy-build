@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { 
@@ -34,7 +33,11 @@ interface ApplicationSubmission {
   status: string;
 }
 
-const ApplicationSubmissionsTable = () => {
+interface ApplicationSubmissionsTableProps {
+  onError?: (error: string) => void;
+}
+
+const ApplicationSubmissionsTable = ({ onError }: ApplicationSubmissionsTableProps) => {
   const [submissions, setSubmissions] = useState<ApplicationSubmission[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,6 +63,7 @@ const ApplicationSubmissionsTable = () => {
         title: "Error fetching applications",
         description: error.message || "Failed to fetch application submissions"
       });
+      if (onError) onError(error.message || "Failed to fetch application submissions");
     } finally {
       setLoading(false);
     }

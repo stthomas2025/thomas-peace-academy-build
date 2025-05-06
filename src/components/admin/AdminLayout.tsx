@@ -1,5 +1,5 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { useNavigate } from "react-router-dom";
 import AdminLogin from "./AdminLogin";
@@ -7,11 +7,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ContactSubmissionsTable from "./ContactSubmissionsTable";
 import ApplicationSubmissionsTable from "./ApplicationSubmissionsTable";
 import AdminHeader from "./AdminHeader";
-import { Loader2 } from "lucide-react";
+import { Loader2, AlertCircle } from "lucide-react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const AdminLayout = () => {
   const { isAdmin, isLoading } = useAdminAuth();
   const navigate = useNavigate();
+  const [fetchError, setFetchError] = useState<string | null>(null);
 
   // Prevent search engines from indexing this page
   useEffect(() => {
@@ -25,6 +27,22 @@ const AdminLayout = () => {
       // Clean up
       document.head.removeChild(meta);
     };
+  }, []);
+
+  // Global error handler for fetch operations
+  useEffect(() => {
+    const handleFetchErrors = () => {
+      window.addEventListener('unhandledrejection', (event) => {
+        if (event.reason && event.reason.message) {
+          console.error("Unhandled promise rejection:", event.reason);
+          if (event.reason.message.includes("fetch") || event.reason.message.includes("network")) {
+            setFetchError("Network error occurred. Please check your connection and try again.");
+          }
+        }
+      });
+    };
+
+    handleFetchErrors();
   }, []);
 
   // Show loading state
@@ -47,6 +65,14 @@ const AdminLayout = () => {
       <AdminHeader />
       
       <main className="flex-1 container mx-auto py-8 px-4">
+        {fetchError && (
+          <Alert variant="destructive" className="mb-6">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Error</AlertTitle>
+            <AlertDescription>{fetchError}</AlertDescription>
+          </Alert>
+        )}
+
         <div className="bg-white rounded-xl shadow-md p-6">
           <h1 className="text-3xl font-serif font-bold text-school-dark mb-8 text-center">
             St. Thomas School Admin Panel
@@ -59,11 +85,11 @@ const AdminLayout = () => {
             </TabsList>
             
             <TabsContent value="contacts" className="mt-6">
-              <ContactSubmissionsTable />
+              <ContactSubmissionsTable onError={(error) => setFetchError(error)} />
             </TabsContent>
             
             <TabsContent value="applications" className="mt-6">
-              <ApplicationSubmissionsTable />
+              <ApplicationSubmissionsTable onError={(error) => setFetchError(error)} />
             </TabsContent>
           </Tabs>
         </div>

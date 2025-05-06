@@ -11,58 +11,45 @@ export function useAdminAuth() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // Set up auth state listener
+    // Set up auth state listener first
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
+      async (event, currentSession) => {
+        console.log("Auth state changed:", event);
+        setSession(currentSession);
+        setUser(currentSession?.user ?? null);
         
         // Check if user is admin when auth state changes
-        if (session?.user) {
-          checkIsAdmin(session.user.email || '');
+        if (currentSession?.user) {
+          const email = currentSession.user.email || '';
+          // Direct check to avoid RLS recursion
+          setIsAdmin(email === 'admin@thomaspeaceacademy.edu.np');
+          setIsLoading(false);
         } else {
           setIsAdmin(false);
+          setIsLoading(false);
         }
       }
     );
 
     // Check current session on load
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
+    supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
+      setSession(currentSession);
+      setUser(currentSession?.user ?? null);
       
-      if (session?.user) {
-        checkIsAdmin(session.user.email || '');
+      if (currentSession?.user) {
+        const email = currentSession.user.email || '';
+        // Direct check to avoid RLS recursion
+        setIsAdmin(email === 'admin@thomaspeaceacademy.edu.np');
       } else {
         setIsAdmin(false);
-        setIsLoading(false);
       }
+      setIsLoading(false);
     });
 
     return () => {
       subscription.unsubscribe();
     };
   }, []);
-
-  // Function to check if user is an admin - updated to avoid RLS recursion
-  const checkIsAdmin = async (email: string) => {
-    try {
-      // Instead of checking admin_users table directly, check if email matches our admin email
-      // This avoids the RLS policy recursion
-      if (email === 'admin@thomaspeaceacademy.edu.np') {
-        setIsAdmin(true);
-      } else {
-        // For any other emails, try to check via RPC function or service role if needed
-        // For now, set to false
-        setIsAdmin(false);
-      }
-    } catch (error) {
-      console.error("Error checking admin status:", error);
-      setIsAdmin(false);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   const signOut = async () => {
     try {
