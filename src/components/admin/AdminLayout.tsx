@@ -31,19 +31,44 @@ const AdminLayout = () => {
 
   // Global error handler for fetch operations
   useEffect(() => {
-    const handleFetchErrors = () => {
-      window.addEventListener('unhandledrejection', (event) => {
-        if (event.reason && event.reason.message) {
-          console.error("Unhandled promise rejection:", event.reason);
-          if (event.reason.message.includes("fetch") || event.reason.message.includes("network")) {
-            setFetchError("Network error occurred. Please check your connection and try again.");
-          }
+    const handleGlobalErrors = (event: ErrorEvent) => {
+      console.error("Global error caught:", event.error);
+      if (event.error && event.error.message) {
+        if (event.error.message.includes("fetch") || 
+            event.error.message.includes("network") ||
+            event.error.message.includes("policy")) {
+          setFetchError("Network or database error occurred. Please check your connection and permissions.");
         }
-      });
+      }
     };
 
-    handleFetchErrors();
+    // Handle unhandled promise rejections
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      console.error("Unhandled promise rejection:", event.reason);
+      if (event.reason && event.reason.message) {
+        if (event.reason.message.includes("fetch") || 
+            event.reason.message.includes("network") ||
+            event.reason.message.includes("policy")) {
+          setFetchError("Network or database error occurred. Please check your connection and permissions.");
+        }
+      }
+    };
+
+    window.addEventListener('error', handleGlobalErrors);
+    window.addEventListener('unhandledrejection', handleUnhandledRejection);
+
+    return () => {
+      window.removeEventListener('error', handleGlobalErrors);
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection);
+    };
   }, []);
+
+  // If the user is not yet verified, redirect to login page
+  useEffect(() => {
+    if (!isLoading && !isAdmin) {
+      navigate("/");
+    }
+  }, [isAdmin, isLoading, navigate]);
 
   // Show loading state
   if (isLoading) {

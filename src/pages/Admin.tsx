@@ -15,6 +15,7 @@ const Admin = () => {
     
     // If not loading and not admin, redirect to home
     if (!isLoading && !isAdmin) {
+      console.log("Not admin, redirecting to home");
       navigate("/");
     }
   }, [isAdmin, user, isLoading, navigate]);

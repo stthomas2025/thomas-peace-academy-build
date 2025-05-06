@@ -18,10 +18,9 @@ export function useAdminAuth() {
         setSession(currentSession);
         setUser(currentSession?.user ?? null);
         
-        // Check if user is admin when auth state changes
+        // Direct check to avoid RLS recursion
         if (currentSession?.user) {
           const email = currentSession.user.email || '';
-          // Direct check to avoid RLS recursion
           setIsAdmin(email === 'admin@thomaspeaceacademy.edu.np');
         } else {
           setIsAdmin(false);
@@ -37,7 +36,6 @@ export function useAdminAuth() {
       
       if (currentSession?.user) {
         const email = currentSession.user.email || '';
-        // Direct check to avoid RLS recursion
         setIsAdmin(email === 'admin@thomaspeaceacademy.edu.np');
       } else {
         setIsAdmin(false);
