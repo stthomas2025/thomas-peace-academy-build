@@ -4,6 +4,7 @@ import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
+import AdminLogin from "@/components/admin/AdminLogin";
 
 const Admin = () => {
   const { isAdmin, user, isLoading } = useAdminAuth();
@@ -13,9 +14,9 @@ const Admin = () => {
   useEffect(() => {
     console.log("Admin page - Auth status:", { isAdmin, user, isLoading });
     
-    // If not loading and not admin, redirect to home
-    if (!isLoading && !isAdmin) {
-      console.log("Not admin, redirecting to home");
+    // Only redirect non-admins if they're already authenticated
+    if (!isLoading && !isAdmin && user) {
+      console.log("Authenticated but not admin, redirecting to home");
       navigate("/");
     }
   }, [isAdmin, user, isLoading, navigate]);
@@ -30,13 +31,13 @@ const Admin = () => {
     );
   }
 
-  // If admin, show admin layout
-  if (isAdmin) {
-    return <AdminLayout />;
+  // If user is not authenticated or not admin, show login page
+  if (!user || !isAdmin) {
+    return <AdminLogin />;
   }
   
-  // This should not render as the useEffect will redirect non-admins
-  return null;
+  // If admin, show admin layout
+  return <AdminLayout />;
 };
 
 export default Admin;

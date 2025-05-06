@@ -13,7 +13,7 @@ export function useAdminAuth() {
   useEffect(() => {
     // Set up auth state listener first
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, currentSession) => {
+      (event, currentSession) => {
         console.log("Auth state changed:", event);
         setSession(currentSession);
         setUser(currentSession?.user ?? null);
@@ -31,6 +31,7 @@ export function useAdminAuth() {
 
     // Check current session on load
     supabase.auth.getSession().then(({ data: { session: currentSession } }) => {
+      console.log("Current session check:", currentSession?.user?.email);
       setSession(currentSession);
       setUser(currentSession?.user ?? null);
       

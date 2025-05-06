@@ -1,9 +1,10 @@
 
 import { useEffect, useState } from "react";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
-import { useNavigate } from "react-router-dom";
-import AdminLogin from "./AdminLogin";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Tabs from "@/components/ui/tabs";
+import TabsContent from "@/components/ui/tabs";
+import TabsList from "@/components/ui/tabs";
+import TabsTrigger from "@/components/ui/tabs";
 import ContactSubmissionsTable from "./ContactSubmissionsTable";
 import ApplicationSubmissionsTable from "./ApplicationSubmissionsTable";
 import AdminHeader from "./AdminHeader";
@@ -12,7 +13,6 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const AdminLayout = () => {
   const { isAdmin, isLoading } = useAdminAuth();
-  const navigate = useNavigate();
   const [fetchError, setFetchError] = useState<string | null>(null);
 
   // Prevent search engines from indexing this page
@@ -63,13 +63,6 @@ const AdminLayout = () => {
     };
   }, []);
 
-  // If the user is not yet verified, redirect to login page
-  useEffect(() => {
-    if (!isLoading && !isAdmin) {
-      navigate("/");
-    }
-  }, [isAdmin, isLoading, navigate]);
-
   // Show loading state
   if (isLoading) {
     return (
@@ -78,11 +71,6 @@ const AdminLayout = () => {
         <p className="mt-4 text-lg text-gray-600">Loading admin panel...</p>
       </div>
     );
-  }
-
-  // If not admin, show login page
-  if (!isAdmin) {
-    return <AdminLogin />;
   }
 
   return (
