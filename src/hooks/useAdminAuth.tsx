@@ -23,11 +23,10 @@ export function useAdminAuth() {
           const email = currentSession.user.email || '';
           // Direct check to avoid RLS recursion
           setIsAdmin(email === 'admin@thomaspeaceacademy.edu.np');
-          setIsLoading(false);
         } else {
           setIsAdmin(false);
-          setIsLoading(false);
         }
+        setIsLoading(false);
       }
     );
 
