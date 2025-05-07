@@ -77,36 +77,6 @@ const PreSchool = () => {
     }
   ];
 
-  const faculty = [
-    {
-      name: "Mrs. Anjali Patel",
-      position: "Head of Pre-School",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-      experience: "15+ years",
-      qualification: "M.Ed in Early Childhood Education",
-    },
-    {
-      name: "Mr. Rajiv Shrestha",
-      position: "Nursery Teacher",
-      image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-      experience: "8+ years",
-      qualification: "B.Ed in Child Psychology",
-    },
-    {
-      name: "Mrs. Sunita Gurung",
-      position: "LKG Teacher",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-      experience: "10+ years",
-      qualification: "B.Ed in Elementary Education",
-    },
-    {
-      name: "Ms. Prabha Thakuri",
-      position: "UKG Teacher",
-      image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-      experience: "7+ years",
-      qualification: "B.Ed in Early Childhood Development",
-    },
-  ];
 
   return (
     <div className="min-h-screen">
@@ -318,42 +288,6 @@ const PreSchool = () => {
             <Button className="bg-school-primary hover:bg-school-primary/90" asChild>
               <Link to="/contact">Schedule a Campus Tour</Link>
             </Button>
-          </div>
-        </div>
-      </section>
-      
-      {/* Faculty Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-school-dark mb-4">
-              Our Pre-School Faculty
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Dedicated educators with specialized training in early childhood education.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {faculty.map((teacher, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={teacher.image} 
-                    alt={teacher.name}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-bold text-xl mb-1">{teacher.name}</h3>
-                  <p className="text-school-primary font-medium mb-2">{teacher.position}</p>
-                  <div className="text-sm text-gray-600">
-                    <p>Experience: {teacher.experience}</p>
-                    <p>Qualification: {teacher.qualification}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
