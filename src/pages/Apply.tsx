@@ -436,7 +436,7 @@ const Apply = () => {
               <p className="text-gray-600 mb-4">
                 For any queries regarding the admission process, please contact us:
               </p>
-              <p className="font-medium">081-521423 | schoolstthoms@gmail.com</p>
+              <p className="font-medium">081-534463| schoolstthoms@gmail.com</p>
             </div>
           </div>
         </div>
