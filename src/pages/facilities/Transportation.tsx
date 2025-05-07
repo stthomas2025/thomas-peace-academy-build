@@ -139,7 +139,7 @@ const Transportation = () => {
               <div className="flex justify-center items-center space-x-6">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-school-primary mr-2" />
-                  <span className="text-gray-600">081-521423</span>
+                  <span className="text-gray-600">081-534463</span>
                 </div>
                 <Button className="bg-school-primary hover:bg-school-primary/90">
                   Contact Us
