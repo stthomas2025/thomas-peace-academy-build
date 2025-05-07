@@ -150,34 +150,16 @@ const Footer = () => {
             
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-3">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
+             <a 
+               href="https://www.facebook.com/st.thomasenglishsecondaryschool"
+              className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white"
+              aria-label="Facebook"
+              target="_blank"
+             rel="noopener noreferrer"
+               >
+               <Facebook className="w-5 h-5" />
+           </a> 
+              
             </div>
           </div>
         </div>
@@ -187,12 +169,6 @@ const Footer = () => {
             © {currentYear} St. Thomas Secondary School. All rights reserved.
           </p>
           <div className="flex items-center mt-4 md:mt-0">
-            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm mx-3 transition-colors duration-200">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-white text-sm mx-3 transition-colors duration-200">
-              Terms of Use
-            </Link>
             <button 
               onClick={scrollToTop}
               className="w-8 h-8 rounded-full flex items-center justify-center bg-gray-700 hover:bg-school-primary transition-colors duration-200 text-white ml-3"
