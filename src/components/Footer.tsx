@@ -75,7 +75,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Clock className="w-5 h-5 text-school-accent mr-3 flex-shrink-0" />
-                <span className="text-gray-300">Mon-Fri: 7:00AM - 4:00PM</span>
+                <span className="text-gray-300">Sun-Fri: 7:00AM - 4:00PM</span>
               </li>
             </ul>
           </div>
@@ -128,25 +128,6 @@ const Footer = () => {
 
           <div>
             <h3 className="text-lg font-bold mb-6 pb-2 border-b border-gray-700">Stay Connected</h3>
-            <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter to receive the latest updates and news from St. Thomas Secondary School.
-            </p>
-            
-            <form className="mb-8">
-              <div className="flex">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="bg-gray-700 text-white px-4 py-2 rounded-l-md focus:outline-none w-full"
-                />
-                <button 
-                  type="submit" 
-                  className="bg-school-primary text-white px-4 py-2 rounded-r-md hover:bg-school-primary/90 transition-colors duration-200"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form>
             
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-3">
