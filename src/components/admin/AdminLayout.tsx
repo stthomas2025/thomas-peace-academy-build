@@ -4,6 +4,9 @@ import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ContactSubmissionsTable from "./ContactSubmissionsTable";
 import ApplicationSubmissionsTable from "./ApplicationSubmissionsTable";
+import NoticesManager from "./NoticesManager";
+import BannerManager from "./BannerManager";
+import GalleryManager from "./GalleryManager";
 import AdminHeader from "./AdminHeader";
 import { Loader2, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -89,9 +92,12 @@ const AdminLayout = () => {
           </h1>
           
           <Tabs defaultValue="contacts" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsList className="grid w-full grid-cols-5 mb-8">
               <TabsTrigger value="contacts">Contact Submissions</TabsTrigger>
               <TabsTrigger value="applications">Application Submissions</TabsTrigger>
+              <TabsTrigger value="notices">Notices</TabsTrigger>
+              <TabsTrigger value="banners">Banners</TabsTrigger>
+              <TabsTrigger value="gallery">Gallery</TabsTrigger>
             </TabsList>
             
             <TabsContent value="contacts" className="mt-6">
@@ -100,6 +106,18 @@ const AdminLayout = () => {
             
             <TabsContent value="applications" className="mt-6">
               <ApplicationSubmissionsTable onError={(error) => setFetchError(error)} />
+            </TabsContent>
+
+            <TabsContent value="notices" className="mt-6">
+              <NoticesManager onError={(error) => setFetchError(error)} />
+            </TabsContent>
+            
+            <TabsContent value="banners" className="mt-6">
+              <BannerManager onError={(error) => setFetchError(error)} />
+            </TabsContent>
+            
+            <TabsContent value="gallery" className="mt-6">
+              <GalleryManager onError={(error) => setFetchError(error)} />
             </TabsContent>
           </Tabs>
         </div>
