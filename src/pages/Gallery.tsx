@@ -11,46 +11,62 @@ interface GalleryImage {
   caption: string | null;
 }
 
+// Create a unified interface for all images
+interface DisplayImage {
+  id: string;
+  image_url: string;
+  caption: string | null;
+}
+
 const Gallery = () => {
   const [galleryImages, setGalleryImages] = useState<GalleryImage[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Static gallery images (existing)
-  const staticGalleryImages = [
+  // Static gallery images with property names matching database format
+  const staticGalleryImages: DisplayImage[] = [
     {
-      src: "/lovable-uploads/pre school/founder (12).jpg",
+      id: "static-1",
+      image_url: "/lovable-uploads/pre school/founder (12).jpg",
       caption: "Pre-School: Playful Kids' Room"
     },
     {
-      src: "/lovable-uploads/pre school/founder (13).jpg",
+      id: "static-2",
+      image_url: "/lovable-uploads/pre school/founder (13).jpg",
       caption: "Pre-School: Interactive Learning Activities"
     },
     {
-      src: "/lovable-uploads/pre school/founder (14).jpg",
+      id: "static-3",
+      image_url: "/lovable-uploads/pre school/founder (14).jpg",
       caption: "Pre-School: Creative Arts Time"
     },
     {
-      src: "/lovable-uploads/pre school/founder (15).jpg",
+      id: "static-4",
+      image_url: "/lovable-uploads/pre school/founder (15).jpg",
       caption: "Pre-School: Outdoor Fun with Class"
     },
     {
-      src: "/lovable-uploads/pre school/founder (16).jpg",
+      id: "static-5",
+      image_url: "/lovable-uploads/pre school/founder (16).jpg",
       caption: "Pre-School: Story Time Session"
     },
     {
-      src: "/lovable-uploads/chemistry lab.jpeg",
+      id: "static-6",
+      image_url: "/lovable-uploads/chemistry lab.jpeg",
       caption: "Laboratory: Chemistry Laboratory"
     },
     {
-      src: "/lovable-uploads/physics lab.jpeg",
+      id: "static-7",
+      image_url: "/lovable-uploads/physics lab.jpeg",
       caption: "Laboratory: Physics Laboratory"
     },
     {
-      src: "/lovable-uploads/high school/lab bio.jpg",
+      id: "static-8",
+      image_url: "/lovable-uploads/high school/lab bio.jpg",
       caption: "Laboratory: Biology Lab"
     },
     {
-      src: "/lovable-uploads/computer lap.jpeg",
+      id: "static-9",
+      image_url: "/lovable-uploads/computer lap.jpeg",
       caption: "Laboratory: Computer Laboratory"
     }
   ];
@@ -66,14 +82,8 @@ const Gallery = () => {
 
         if (error) throw error;
         
-        // Convert DB format to match static format
-        const dbImages = data.map((img: any) => ({
-          src: img.image_url,
-          caption: img.caption || "",
-          id: img.id
-        }));
-        
-        setGalleryImages(dbImages);
+        // Database images already have the correct format
+        setGalleryImages(data || []);
       } catch (error) {
         console.error("Error fetching gallery images:", error);
       } finally {
@@ -84,8 +94,8 @@ const Gallery = () => {
     fetchGalleryImages();
   }, []);
 
-  // Combine static and dynamic images
-  const allImages = [...galleryImages, ...staticGalleryImages];
+  // Combine both arrays of images
+  const allImages: DisplayImage[] = [...galleryImages, ...staticGalleryImages];
 
   return (
     <div className="min-h-screen">
@@ -103,11 +113,11 @@ const Gallery = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {allImages.map((img, idx) => (
-                <Card key={img.id || idx} className="overflow-hidden shadow-md">
+              {allImages.map((img) => (
+                <Card key={img.id} className="overflow-hidden shadow-md">
                   <img 
-                    src={img.src} 
-                    alt={img.caption} 
+                    src={img.image_url} 
+                    alt={img.caption || "Gallery image"} 
                     className="w-full h-56 object-cover"
                     loading="lazy"
                   />
