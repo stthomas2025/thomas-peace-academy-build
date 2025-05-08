@@ -99,21 +99,23 @@ const NoticeBar = () => {
         </Link>
       </div>
 
-      <style jsx>{`
-        @keyframes scrollNotices {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          @keyframes scrollNotices {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
 
-        .notice-scroll {
-          animation: scrollNotices 20s linear infinite;
-          width: max-content;
-        }
-      `}</style>
+          .notice-scroll {
+            animation: scrollNotices 20s linear infinite;
+            width: max-content;
+          }
+        `}
+      </style>
     </div>
   );
 };
