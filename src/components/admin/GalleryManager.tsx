@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -86,7 +85,7 @@ const GalleryManager = ({ onError }: GalleryManagerProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      // Only allow image files
+      // Keep image file restriction for gallery
       if (file.type.startsWith("image/")) {
         setImageFile(file);
         setPreviewUrl(URL.createObjectURL(file));
@@ -383,6 +382,9 @@ const GalleryManager = ({ onError }: GalleryManagerProps) => {
                     accept="image/*"
                     onChange={handleFileChange}
                   />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Only image files are allowed (jpg, png, gif, etc.)
+                  </p>
                 </div>
               </div>
               

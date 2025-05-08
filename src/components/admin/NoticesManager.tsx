@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -91,17 +90,7 @@ const NoticesManager = ({ onError }: NoticesManagerProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      // Only allow PDF files
-      if (file.type === "application/pdf") {
-        setPdfFile(file);
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Invalid file type",
-          description: "Please upload a PDF file"
-        });
-        e.target.value = "";
-      }
+      setPdfFile(file);
     }
   };
 
@@ -138,7 +127,7 @@ const NoticesManager = ({ onError }: NoticesManagerProps) => {
       toast({
         variant: "destructive",
         title: "Upload failed",
-        description: error.message || "Failed to upload PDF"
+        description: error.message || "Failed to upload file"
       });
       return null;
     } finally {
@@ -410,17 +399,16 @@ const NoticesManager = ({ onError }: NoticesManagerProps) => {
               </div>
               
               <div>
-                <Label htmlFor="pdf">PDF Attachment</Label>
+                <Label htmlFor="pdf">File Attachment</Label>
                 <div className="mt-1">
                   <Input
                     id="pdf"
                     type="file"
-                    accept="application/pdf"
                     onChange={handleFileChange}
                   />
                   {currentNotice.pdf_url && !pdfFile && (
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">Current PDF:</p>
+                      <p className="text-sm text-gray-500">Current file:</p>
                       <a 
                         href={currentNotice.pdf_url} 
                         target="_blank" 
@@ -428,7 +416,7 @@ const NoticesManager = ({ onError }: NoticesManagerProps) => {
                         className="text-blue-500 hover:text-blue-600 text-sm flex items-center"
                       >
                         <FileCheck className="h-4 w-4 mr-1" />
-                        View PDF
+                        View File
                         <ExternalLink className="h-3 w-3 ml-1" />
                       </a>
                     </div>

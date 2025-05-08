@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -89,18 +88,8 @@ const BannerManager = ({ onError }: BannerManagerProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      // Only allow image files
-      if (file.type.startsWith("image/")) {
-        setImageFile(file);
-        setPreviewUrl(URL.createObjectURL(file));
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Invalid file type",
-          description: "Please upload an image file"
-        });
-        e.target.value = "";
-      }
+      setImageFile(file);
+      setPreviewUrl(URL.createObjectURL(file));
     }
   };
 
@@ -131,11 +120,11 @@ const BannerManager = ({ onError }: BannerManagerProps) => {
       
       return urlData.publicUrl;
     } catch (error: any) {
-      console.error("Error uploading image:", error);
+      console.error("Error uploading file:", error);
       toast({
         variant: "destructive",
         title: "Upload failed",
-        description: error.message || "Failed to upload image"
+        description: error.message || "Failed to upload file"
       });
       return null;
     } finally {
@@ -376,7 +365,7 @@ const BannerManager = ({ onError }: BannerManagerProps) => {
           <form onSubmit={handleSubmit} className="space-y-4 pt-4">
             <div className="grid gap-4">
               <div>
-                <Label htmlFor="image">Banner Image</Label>
+                <Label htmlFor="image">Banner File</Label>
                 <div className="mt-1">
                   {previewUrl && (
                     <div className="mb-3">
@@ -390,7 +379,6 @@ const BannerManager = ({ onError }: BannerManagerProps) => {
                   <Input
                     id="image"
                     type="file"
-                    accept="image/*"
                     onChange={handleFileChange}
                   />
                 </div>
