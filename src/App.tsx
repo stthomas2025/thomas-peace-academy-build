@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Apply from "./pages/Apply";
 import Admin from "./pages/Admin";
+import Notices from "./pages/Notices";
 
 // Academic pages
 import PreSchool from "./pages/academics/PreSchool";
@@ -89,6 +89,7 @@ const App = () => (
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/notices" element={<Notices />} />
           
           {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />

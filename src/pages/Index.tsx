@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
@@ -7,12 +8,16 @@ import BoardMembersSection from "@/components/BoardMembersSection";
 import CampusEnvironmentSection from "@/components/CampusEnvironmentSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import NoticeBar from "@/components/NoticeBar";
+import BannerPopup from "@/components/BannerPopup";
 
 const Index = () => {
   return (
     <div className="min-h-screen font-sans">
       <Header />
       <HeroSection />
+      <NoticeBar />
+      <BannerPopup />
       <AboutSection />
 
       <section className="py-20 bg-white">

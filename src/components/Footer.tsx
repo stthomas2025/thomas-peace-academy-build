@@ -10,6 +10,7 @@ const Footer = () => {
     { name: "About Us", link: "/about" },
     { name: "Admissions", link: "/admissions" },
     { name: "Academics", link: "/academics" },
+    { name: "Notices", link: "/notices" },
     { name: "Facilities", link: "/facilities" },
     { name: "Gallery", link: "/gallery" },
     { name: "Contact", link: "/contact" },
