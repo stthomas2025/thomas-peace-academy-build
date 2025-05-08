@@ -35,12 +35,7 @@ const BannerPopup = () => {
         // Check if we have a banner to show
         if (data) {
           setBannerImage(data);
-          
-          // Check if this banner has been dismissed before
-          const dismissedBanners = JSON.parse(localStorage.getItem("dismissedBanners") || "[]");
-          if (dismissedBanners.includes(data.id)) {
-            setIsOpen(false);
-          }
+          setIsOpen(true); // Always show the banner when page loads
         }
       } catch (error) {
         console.error("Error in banner fetch:", error);
@@ -53,12 +48,6 @@ const BannerPopup = () => {
   }, []);
 
   const closeBanner = () => {
-    // Save this banner ID to localStorage so we don't show it again
-    if (bannerImage) {
-      const dismissedBanners = JSON.parse(localStorage.getItem("dismissedBanners") || "[]");
-      dismissedBanners.push(bannerImage.id);
-      localStorage.setItem("dismissedBanners", JSON.stringify(dismissedBanners));
-    }
     setIsOpen(false);
   };
 
